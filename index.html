@@ -191,9 +191,18 @@
       opacity: 0.6;
       animation: pulseDot 2s infinite ease-in-out;
     }
-    @keyframes pulseDot {
-      0%, 100% { transform: scale(1); opacity: 0.4; }
-      50% { transform: scale(1.4); opacity: 0.9; }
+    /* Marquee infinito para marcas / clientes */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 28s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
     }
   </style>
 </head>
@@ -214,33 +223,42 @@
       <div class="absolute inset-0 bg-gradient-to-r from-[#081014]/90 via-[#081014]/55 to-transparent"></div>
     </div>
 
-    <!-- Top Navigation Bar (Animated entrance) -->
-    <header class="hero-delay-nav relative z-20 w-full px-6 sm:px-12 py-4 sm:py-5 flex items-center justify-between shrink-0">
-      <!-- Brand Logo (Isotipo + Text) -->
-      <a href="#" class="flex items-center gap-3 text-white tracking-tight text-xl font-medium group">
-        <img 
-          src="images/isotipo.png" 
-          alt="Isotipo" 
-          class="w-7 h-7 object-contain brightness-100 group-hover:opacity-90 transition-opacity"
-        />
-        <span class="font-normal text-2xl tracking-tighter">elyte<span class="text-xs align-top font-mono ml-0.5">®</span></span>
-      </a>
+    <!-- Top Navigation Bar con divisores sutiles y logo proporcionado -->
+    <header class="hero-delay-nav relative z-20 w-full px-6 sm:px-12 py-5 sm:py-6 flex items-center justify-between border-b border-white/[0.08] shrink-0">
+      
+      <!-- Brand Logo (Isotipo más grande + Text exacto a Framer) -->
+      <div class="flex items-center gap-6">
+        <a href="#" class="flex items-center gap-3.5 text-white tracking-tight text-xl font-medium group">
+          <img 
+            src="images/isotipo.png" 
+            alt="Isotipo" 
+            class="w-8 h-8 sm:w-9 sm:h-9 object-contain brightness-100 group-hover:scale-105 transition-transform"
+          />
+          <span class="font-normal text-2xl sm:text-[26px] tracking-tighter leading-none">elyte<span class="text-xs align-top font-mono ml-0.5">®</span></span>
+        </a>
+      </div>
 
-      <!-- Center Navigation -->
-      <nav class="hidden md:flex items-center gap-9 text-[14px] font-normal text-white/90">
-        <a href="#about" class="hover:text-white transition-colors">About</a>
-        <div class="relative group cursor-pointer flex items-center gap-1 hover:text-white transition-colors">
+      <!-- Center Navigation con divisores sutiles (delgados) -->
+      <nav class="hidden md:flex items-center text-[13.5px] font-normal text-white/85">
+        <a href="#about" class="px-5 py-1.5 hover:text-white transition-colors">About</a>
+        <span class="w-[1px] h-3.5 bg-white/20"></span>
+        
+        <div class="relative group cursor-pointer flex items-center gap-1.5 px-5 py-1.5 hover:text-white transition-colors">
           <span>Services</span>
           <svg class="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </div>
-        <a href="#case-studies" class="hover:text-white transition-colors">Case studies</a>
-        <a href="#approach" class="hover:text-white transition-colors">Insights</a>
+        <span class="w-[1px] h-3.5 bg-white/20"></span>
+
+        <a href="#case-studies" class="px-5 py-1.5 hover:text-white transition-colors">Case studies</a>
+        <span class="w-[1px] h-3.5 bg-white/20"></span>
+
+        <a href="#approach" class="px-5 py-1.5 hover:text-white transition-colors">Insights</a>
       </nav>
 
       <!-- Right CTA -->
-      <div>
+      <div class="flex items-center gap-4">
         <a href="#contact" class="hidden sm:inline-block px-5 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md text-white text-[13px] font-medium transition-all">
           Get started
         </a>
@@ -249,21 +267,13 @@
 
     <!-- Hero Content (Centered vertically in remaining viewport space) -->
     <div class="relative z-10 w-full max-w-[1240px] mx-auto px-6 sm:px-12 my-auto py-2 flex flex-col justify-center">
-      
-      <!-- Subtle Elite Badge Tag -->
-      <div class="hero-slide-in hero-delay-tag mb-3 sm:mb-4">
-        <span class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-mono tracking-widest uppercase text-white/90">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          Strategic Legal Advisory
-        </span>
-      </div>
 
       <!-- Fluid responsive heading: fits 1366x768 and 1920x1080 without overflowing -->
-      <h1 class="hero-slide-in hero-delay-title text-4xl sm:text-5xl md:text-6xl lg:text-[72px] xl:text-[80px] font-normal leading-[1.05] tracking-tighter text-white max-w-3xl lg:max-w-4xl mb-4 sm:mb-6">
+      <h1 class="hero-slide-in hero-delay-title text-4xl sm:text-5xl md:text-6xl lg:text-[76px] xl:text-[84px] font-normal leading-[1.04] tracking-tighter text-white max-w-3xl lg:max-w-4xl mb-5 sm:mb-7">
         Reimagine What Your Business Can Achieve
       </h1>
 
-      <p class="hero-slide-in hero-delay-p text-neutral-300 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-lg mb-6 sm:mb-8">
+      <p class="hero-slide-in hero-delay-p text-neutral-300 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-lg mb-7 sm:mb-9">
         We help leaders navigate complexity, solve critical challenges, and build stronger, more resilient organizations for the future.
       </p>
 
@@ -292,6 +302,80 @@
       <span class="hidden sm:inline">Scale with confidence</span>
     </div>
 
+  </section>
+
+  <!-- ==================== MARQUEE: CLIENTES / MARCAS CON QUIENES TRABAJAMOS ==================== -->
+  <section class="w-full bg-[#f2f3f5] border-b border-black/10 py-9 overflow-hidden relative">
+    
+    <!-- Sutiles gradientes de fade en los bordes para suavizar la entrada y salida -->
+    <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f2f3f5] to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f2f3f5] to-transparent z-10 pointer-events-none"></div>
+
+    <div class="marquee-track flex items-center gap-16 sm:gap-24 opacity-60 hover:opacity-90 transition-opacity">
+      
+      <!-- Set 1 -->
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4"/></svg>
+        <span>Spherule</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M4 6h16l-3 4H7L4 6zm2 6h12l-3 4H9l-3-4zm2 6h8l-2 3h-4l-2-3z"/></svg>
+        <span>FeatherDev</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><polygon points="6,4 18,4 21,12 18,20 6,20 3,12" fill="currentColor"/></svg>
+        <span>GlobalBank</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-none stroke-currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+        <span>Nietzsche</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l-8-4v6l8 4 8-4v-6l-8 4z"/></svg>
+        <span>KiteLegal</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Polymath</span>
+      </div>
+
+      <!-- Set 2 (Duplicado para loop infinito sin saltos) -->
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4"/></svg>
+        <span>Spherule</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M4 6h16l-3 4H7L4 6zm2 6h12l-3 4H9l-3-4zm2 6h8l-2 3h-4l-2-3z"/></svg>
+        <span>FeatherDev</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><polygon points="6,4 18,4 21,12 18,20 6,20 3,12" fill="currentColor"/></svg>
+        <span>GlobalBank</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-none stroke-currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+        <span>Nietzsche</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l-8-4v6l8 4 8-4v-6l-8 4z"/></svg>
+        <span>KiteLegal</span>
+      </div>
+
+      <div class="flex items-center gap-3 tracking-tight font-semibold text-[#081014] text-lg sm:text-xl">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Polymath</span>
+      </div>
+
+    </div>
   </section>
 
   <!-- ==================== 2. PILLARS SECTION (EXACTO SCREENSHOT 2) ==================== -->
