@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+import os
+
+html_content = """<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -760,3 +762,17 @@
 
 </body>
 </html>
+"""
+
+with open(r'c:\Users\not\Desktop\proyectos\elite-abogados\index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("SCROLL_ANIMATIONS_AND_MICROINTERACTIONS_ADDED")
+
+
+
+
+
+
+
+
