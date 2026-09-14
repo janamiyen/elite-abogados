@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ÉLITE LEGAL — Estrategia y Adquisición para Abogados</title>
+  <meta name="description" content="Infraestructura de autoridad, automatización y captación de casos de alto valor para firmas jurídicas." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23081014'><rect width='24' height='24' rx='4' fill='%23081014'/><path d='M7 6h10v2H7zm0 5h10v2H7zm0 5h6v2H7z' fill='%23fff'/></svg>" />
+
+  <!-- Google Fonts: Geist & Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#081014',
+              darkSurface: '#0d161a',
+              cardBg: '#131e24',
+              grayBorder: 'rgba(255, 255, 255, 0.12)',
+              lightBorder: 'rgba(8, 16, 20, 0.1)',
+              lightBg: '#f2f3f5',
+              subtleGray: '#707070',
+              mutedLight: '#c8c8c8',
+            }
+          },
+          fontFamily: {
+            sans: ['Geist', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #f2f3f5;
+      color: #081014;
+      font-family: 'Geist', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .tag-mono {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: #707070;
+    }
+    .tag-mono-light {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: #c8c8c8;
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06) 0%, rgba(8,16,20,0) 70%);
+    }
+    .framer-card {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .framer-card:hover {
+      transform: translateY(-2px);
+    }
+    .arrow-icon-btn:hover .arrow-icon-inner {
+      transform: translate(2px, -2px);
+    }
+    .arrow-icon-inner {
+      transition: transform 0.25s ease;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      opacity: 0;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      opacity: 1;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="selection:bg-neutral-800 selection:text-white">
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 py-4 md:py-6 transition-all duration-300" id="mainHeader">
+    <div class="w-full max-w-[1160px] flex items-center justify-between px-6 py-3.5 rounded-full backdrop-blur-md bg-[#081014]/85 border border-white/10 text-white shadow-2xl">
+      <a href="#" class="flex items-center gap-2 font-semibold tracking-tight text-lg group">
+        <span class="w-7 h-7 rounded bg-white text-[#081014] flex items-center justify-center font-bold text-sm tracking-tighter shadow">§</span>
+        <span class="tracking-tight text-white group-hover:text-neutral-300 transition-colors">ÉLITE <span class="text-neutral-400 font-normal text-xs uppercase tracking-widest ml-1 font-mono">LEGAL</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14px] font-medium text-neutral-300">
+        <a href="#pilares" class="hover:text-white transition-colors">Pilares</a>
+        <a href="#metodologia" class="hover:text-white transition-colors">Metodología</a>
+        <a href="#casos" class="hover:text-white transition-colors">Resultados</a>
+        <a href="#faq" class="hover:text-white transition-colors">Preguntas</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#contacto" class="arrow-icon-btn inline-flex items-center gap-2 bg-white text-[#081014] px-4 py-2 rounded-full text-[13px] font-medium hover:bg-neutral-200 transition-all shadow-sm">
+          <span>Agendar Diagnóstico</span>
+          <svg class="w-3.5 h-3.5 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative bg-[#081014] text-white min-h-[92vh] flex flex-col justify-end pt-36 pb-16 px-5 sm:px-8 border-b border-white/10 hero-glow overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="w-full max-w-[1160px] mx-auto relative z-10">
+      
+      <div class="flex flex-wrap items-center gap-3 mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="tag-mono-light text-[10px] text-neutral-300">DISPONIBILIDAD SELECTIVA · ESTUDIOS JURÍDICOS</span>
+        </div>
+        <div class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-white/5">
+          <span class="tag-mono-light text-[10px] text-neutral-400">POSICIONAMIENTO DE ALTO IMPACTO</span>
+        </div>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-normal leading-[1.06] tracking-tighter text-white max-w-5xl mb-8">
+        Redefina la autoridad y el volumen de casos <span class="font-medium text-neutral-200">de alto valor</span> en su firma legal.
+      </h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pt-4 pb-10 border-b border-white/15">
+        <p class="md:col-span-7 text-neutral-400 text-lg sm:text-xl leading-relaxed font-normal max-w-2xl">
+          Ayudamos a estudios jurídicos y abogados especializados a construir sistemas predictivos de captación, filtrar consultas sin fricción y posicionarse como la referencia incuestionable de su sector.
+        </p>
+
+        <div class="md:col-span-5 flex flex-col sm:flex-row md:justify-end gap-3.5">
+          <a href="#contacto" class="arrow-icon-btn inline-flex items-center justify-center gap-2.5 bg-white text-[#081014] px-6 py-3.5 rounded-full text-sm font-semibold hover:bg-neutral-100 transition-all">
+            <span>Consultar Disponibilidad</span>
+            <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+          <a href="#casos" class="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white/5 transition-all">
+            Ver Casos de Éxito
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-neutral-400">
+        <div>
+          <span class="block text-white font-mono text-2xl font-semibold tracking-tight">+140%</span>
+          <span class="tag-mono text-[10px] text-neutral-400 mt-1 block">Tasa de Cierre en Consultas</span>
+        </div>
+        <div>
+          <span class="block text-white font-mono text-2xl font-semibold tracking-tight">100%</span>
+          <span class="tag-mono text-[10px] text-neutral-400 mt-1 block">Filtro de Clientes No Calificados</span>
+        </div>
+        <div>
+          <span class="block text-white font-mono text-2xl font-semibold tracking-tight">&lt; 24 hrs</span>
+          <span class="tag-mono text-[10px] text-neutral-400 mt-1 block">Tiempo de Respuesta Automatizado</span>
+        </div>
+        <div>
+          <span class="block text-white font-mono text-2xl font-semibold tracking-tight">Exclusivo</span>
+          <span class="tag-mono text-[10px] text-neutral-400 mt-1 block">Por Especialidad / Región</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PILLARS SECTION ==================== -->
+  <section id="pilares" class="py-24 sm:py-32 px-5 sm:px-8 max-w-[1160px] mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div>
+        <span class="tag-mono mb-3 block">01 / PRINCIPIOS DE ACCIÓN</span>
+        <h2 class="text-3xl sm:text-5xl font-normal tracking-tighter text-[#081014] leading-[1.1]">
+          Estrategia jurídica con impacto medible.
+        </h2>
+      </div>
+      <p class="text-[#707070] text-base max-w-md font-normal leading-relaxed">
+        El prestigio legal tradicional es indispensable, pero sin infraestructura moderna de prospección y conversión, se pierden los casos más rentables del mercado.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="framer-card bg-white p-8 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between min-h-[320px]">
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-[#081014]/5 flex items-center justify-center mb-6 text-sm font-mono font-bold text-[#081014]">01</div>
+          <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-3">Enfoque en Casos Premium</h3>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Eliminamos las consultas gratuitas o de bajo ticket mediante filtrado estratégico antes de que lleguen al tiempo de los socios de la firma.
+          </p>
+        </div>
+        <div class="pt-6 border-t border-black/5">
+          <span class="tag-mono text-[10px]">MAYOR RENTABILIDAD POR HORA</span>
+        </div>
+      </div>
+
+      <div class="framer-card bg-white p-8 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between min-h-[320px]">
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-[#081014]/5 flex items-center justify-center mb-6 text-sm font-mono font-bold text-[#081014]">02</div>
+          <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-3">Autoridad Digital Sobria</h3>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Diseño e identidad digital que transmiten credibilidad institucional, solvencia y confidencialidad absoluta, lejos de modas de marketing genérico.
+          </p>
+        </div>
+        <div class="pt-6 border-t border-black/5">
+          <span class="tag-mono text-[10px]">REPUTACIÓN &amp; CONFIANZA</span>
+        </div>
+      </div>
+
+      <div class="framer-card bg-white p-8 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between min-h-[320px]">
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-[#081014]/5 flex items-center justify-center mb-6 text-sm font-mono font-bold text-[#081014]">03</div>
+          <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-3">Atención Inmediata</h3>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Sistemas automatizados que responden a los clientes en el momento exacto en que buscan asesoramiento legal, agendando citas directamente en su calendario.
+          </p>
+        </div>
+        <div class="pt-6 border-t border-black/5">
+          <span class="tag-mono text-[10px]">CERO TIEMPO MUERTO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== METHODOLOGY SECTION ==================== -->
+  <section id="metodologia" class="bg-[#081014] text-white py-24 sm:py-32 px-5 sm:px-8 border-y border-white/10">
+    <div class="max-w-[1160px] mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+        <div>
+          <span class="tag-mono-light mb-3 block text-neutral-400">02 / SISTEMA COMPROBADO</span>
+          <h2 class="text-3xl sm:text-5xl font-normal tracking-tighter text-white leading-[1.1]">
+            El método para escalar firmas legales.
+          </h2>
+        </div>
+        <p class="text-neutral-400 text-base max-w-md font-normal leading-relaxed">
+          Diseñado específicamente para abogados que no tienen tiempo que perder en experimentos y exigen resultados con métricas claras.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between min-h-[340px]">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <span class="font-mono text-xs text-neutral-400 tracking-wider">ETAPA 01</span>
+              <span class="w-2 h-2 rounded-full bg-white/20"></span>
+            </div>
+            <h3 class="text-2xl font-medium tracking-tight text-white mb-3">Diagnóstico de Práctica</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+              Analizamos su especialidad (corporativo, penal, laboral, tributario, civil), margen por caso y perfil de cliente ideal para enfocar los esfuerzos donde mayor rentabilidad existe.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-neutral-300">Entrega: Mapa de Oportunidad Jurídica</div>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between min-h-[340px]">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <span class="font-mono text-xs text-neutral-400 tracking-wider">ETAPA 02</span>
+              <span class="w-2 h-2 rounded-full bg-white/20"></span>
+            </div>
+            <h3 class="text-2xl font-medium tracking-tight text-white mb-3">Infraestructura &amp; Filtros</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+              Implementamos landing pages de alta conversión, embudos con formularios de precalificación y agendas conectadas a WhatsApp y correo corporativo.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-neutral-300">Entrega: Sistema Integral de Captación</div>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between min-h-[340px]">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <span class="font-mono text-xs text-neutral-400 tracking-wider">ETAPA 03</span>
+              <span class="w-2 h-2 rounded-full bg-white/20"></span>
+            </div>
+            <h3 class="text-2xl font-medium tracking-tight text-white mb-3">Tráfico &amp; Cierre de Casos</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+              Activamos campañas orientadas a intención directa de contratación, asegurando un flujo constante de clientes calificados listos para firmar patrocinio.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-neutral-300">Entrega: Reporte Mensual de Retorno (ROI)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CASE STUDIES ==================== -->
+  <section id="casos" class="py-24 sm:py-32 px-5 sm:px-8 max-w-[1160px] mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div>
+        <span class="tag-mono mb-3 block">03 / CASOS DE ESTUDIO</span>
+        <h2 class="text-3xl sm:text-5xl font-normal tracking-tighter text-[#081014] leading-[1.1]">
+          Resultados tangibles para firmas socias.
+        </h2>
+      </div>
+      <a href="#contacto" class="arrow-icon-btn inline-flex items-center gap-2 text-sm font-semibold text-[#081014] hover:text-neutral-600 transition-colors">
+        <span>Conocer más casos</span>
+        <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="group bg-white rounded-3xl border border-black/5 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div class="p-8 sm:p-10">
+          <div class="flex items-center justify-between mb-6">
+            <span class="tag-mono">DERECHO CORPORATIVO &amp; M&amp;A</span>
+            <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#081014]/5 text-[#081014] font-medium">+185% Facturación</span>
+          </div>
+          <h3 class="text-2xl font-medium tracking-tight text-[#081014] mb-4">Estudio Varela &amp; Asociados</h3>
+          <p class="text-[#707070] text-sm leading-relaxed mb-6">
+            Reestructuramos completamente su canal de captación digital. Se implementó un filtro de facturación mínima para clientes corporativos, eliminando el 80% de llamadas no productivas y cerrando 12 nuevos convenios de asesoría anual.
+          </p>
+        </div>
+        <div class="px-8 pb-8 sm:px-10 sm:pb-10 pt-4 border-t border-black/5 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-xs">MV</div>
+            <div>
+              <p class="text-xs font-semibold text-[#081014]">Dr. Martín Varela</p>
+              <p class="text-[11px] text-[#707070]">Socio Principal</p>
+            </div>
+          </div>
+          <span class="tag-mono text-[10px]">CASO AUDITADO</span>
+        </div>
+      </div>
+
+      <div class="group bg-white rounded-3xl border border-black/5 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div class="p-8 sm:p-10">
+          <div class="flex items-center justify-between mb-6">
+            <span class="tag-mono">DERECHO TRIBUTARIO &amp; LITIGIOS</span>
+            <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#081014]/5 text-[#081014] font-medium">+3.4x Retorno Inversión</span>
+          </div>
+          <h3 class="text-2xl font-medium tracking-tight text-[#081014] mb-4">Albarracín &amp; Partners</h3>
+          <p class="text-[#707070] text-sm leading-relaxed mb-6">
+            Diseño e implementación de un sistema de captación en línea para litigios fiscales complejos. El estudio pasó de depender exclusivamente del boca a boca a recibir un flujo constante y predecible de consultas de alto patrimonio.
+          </p>
+        </div>
+        <div class="px-8 pb-8 sm:px-10 sm:pb-10 pt-4 border-t border-black/5 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-neutral-800 text-white flex items-center justify-center font-bold text-xs">CA</div>
+            <div>
+              <p class="text-xs font-semibold text-[#081014]">Dra. Camila Albarracín</p>
+              <p class="text-[11px] text-[#707070]">Especialista Tributaria</p>
+            </div>
+          </div>
+          <span class="tag-mono text-[10px]">CASO AUDITADO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIAL ==================== -->
+  <section class="bg-neutral-900 text-white py-20 px-5 sm:px-8">
+    <div class="max-w-[860px] mx-auto text-center">
+      <span class="tag-mono-light text-neutral-400 mb-6 inline-block">EXPERIENCIA DE NUESTROS CLIENTES</span>
+      <blockquote class="text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight leading-snug text-neutral-100 mb-8">
+        “El cambio fue inmediato. Dejamos de perder tiempo atendiendo consultas que no llegaban a nada y hoy el 90% de las reuniones que agendamos corresponden a clientes corporativos con presupuesto real.”
+      </blockquote>
+      <div class="inline-flex items-center gap-3">
+        <div class="text-left">
+          <p class="text-sm font-semibold text-white">Dr. Rodrigo Silveira</p>
+          <p class="text-xs text-neutral-400 font-mono">SILVEIRA &amp; ASOCIADOS · BUENOS AIRES</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq" class="py-24 sm:py-32 px-5 sm:px-8 max-w-[1160px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <span class="tag-mono mb-3 block">04 / RESOLVIENDO DUDAS</span>
+        <h2 class="text-3xl sm:text-5xl font-normal tracking-tighter text-[#081014] leading-[1.1] mb-6">
+          Preguntas Frecuentes.
+        </h2>
+        <p class="text-[#707070] text-sm sm:text-base leading-relaxed mb-8">
+          Si su estudio requiere condiciones particulares o acuerdos de confidencialidad estrictos (NDA), estamos a su disposición.
+        </p>
+        <a href="#contacto" class="arrow-icon-btn inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-[#081014] text-white text-xs font-semibold hover:bg-neutral-800 transition-all">
+          <span>Hacer una consulta directa</span>
+          <svg class="w-3.5 h-3.5 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="lg:col-span-7 space-y-4" id="faqList">
+        <div class="faq-item active bg-white rounded-2xl p-6 border border-black/5 shadow-sm cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="text-base sm:text-lg font-medium text-[#081014] tracking-tight">
+              ¿Cómo aseguran que los contactos sean realmente calificados?
+            </h3>
+            <span class="faq-icon text-xl text-[#707070] font-mono select-none">+</span>
+          </div>
+          <div class="faq-answer mt-4 text-[#707070] text-sm leading-relaxed border-t border-black/5 pt-4">
+            Diseñamos filtros previos en el formulario de contacto (tipo de causa, monto involucrado, urgencia y presupuesto disponible). Solo los prospectos que cumplen el criterio mínimo del estudio acceden a la agenda del abogado.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl p-6 border border-black/5 shadow-sm cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="text-base sm:text-lg font-medium text-[#081014] tracking-tight">
+              ¿Esto respeta las normas de ética del Colegio de Abogados?
+            </h3>
+            <span class="faq-icon text-xl text-[#707070] font-mono select-none">+</span>
+          </div>
+          <div class="faq-answer mt-4 text-[#707070] text-sm leading-relaxed border-t border-black/5 pt-4">
+            Absolutamente. Trabajamos bajo un formato institucional y sobrio. No hacemos ofertas agresivas ni promesas de resultados prohibidas por la deontología jurídica; nos enfocamos en autoridad, claridad de especialidad y facilidad de contacto.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl p-6 border border-black/5 shadow-sm cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="text-base sm:text-lg font-medium text-[#081014] tracking-tight">
+              ¿Cuánto tiempo toma implementar el sistema?
+            </h3>
+            <span class="faq-icon text-xl text-[#707070] font-mono select-none">+</span>
+          </div>
+          <div class="faq-answer mt-4 text-[#707070] text-sm leading-relaxed border-t border-black/5 pt-4">
+            El despliegue completo de la infraestructura (diseño, configuración de embudo, automatizaciones de agenda y campañas de lanzamiento) se completa habitualmente entre 10 y 14 días hábiles.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl p-6 border border-black/5 shadow-sm cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="text-base sm:text-lg font-medium text-[#081014] tracking-tight">
+              ¿Puedo integrarlo directamente con mi WhatsApp o CRM actual?
+            </h3>
+            <span class="faq-icon text-xl text-[#707070] font-mono select-none">+</span>
+          </div>
+          <div class="faq-answer mt-4 text-[#707070] text-sm leading-relaxed border-t border-black/5 pt-4">
+            Sí. Conectamos cada solicitud para que ingrese de inmediato al WhatsApp oficial del estudio, a Google Calendar / Calendly y a su CRM o casilla corporativa sin pasos manuales.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT / CTA ==================== -->
+  <section id="contacto" class="bg-[#081014] text-white py-24 sm:py-32 px-5 sm:px-8 border-t border-white/10 relative overflow-hidden">
+    <div class="max-w-[960px] mx-auto text-center relative z-10">
+      <span class="tag-mono-light mb-4 inline-block text-neutral-400">05 / PRIMER PASO</span>
+      <h2 class="text-4xl sm:text-6xl font-normal tracking-tighter text-white leading-[1.08] mb-6">
+        Construyamos la infraestructura de crecimiento para su firma.
+      </h2>
+      <p class="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-12">
+        Agende una sesión confidencial de diagnóstico de 20 minutos para evaluar su especialidad jurídica y diseñar la estrategia a medida.
+      </p>
+
+      <div class="bg-white/5 border border-white/15 rounded-3xl p-6 sm:p-10 max-w-xl mx-auto backdrop-blur-md shadow-2xl text-left">
+        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">Nombre &amp; Apellido</label>
+            <input type="text" required placeholder="Dr. Juan Manuel Pérez" class="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">Estudio o Especialidad Principal</label>
+            <input type="text" required placeholder="Ej: Derecho Laboral Corporativo / Penal Económico" class="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">WhatsApp / Celular de Contacto</label>
+            <input type="tel" required placeholder="+54 9 11 0000-0000" class="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="arrow-icon-btn w-full inline-flex items-center justify-center gap-2 bg-white text-[#081014] py-3.5 px-6 rounded-xl font-semibold text-sm hover:bg-neutral-200 transition-all shadow-md">
+              <span>Solicitar Sesión de Diagnóstico</span>
+              <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <p class="text-center text-[11px] text-neutral-500 pt-2 font-mono">
+            Respuesta y confirmación directa dentro de las 4 horas hábiles.
+          </p>
+        </form>
+
+        <div id="formSuccess" class="hidden text-center py-8">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 text-xl">✓</div>
+          <h3 class="text-lg font-medium text-white mb-2">Solicitud Recibida con Éxito</h3>
+          <p class="text-xs text-neutral-400">Nos pondremos en contacto a la brevedad para coordinar la sesión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#050b0e] text-white py-12 px-5 sm:px-8 border-t border-white/5">
+    <div class="max-w-[1160px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-400">
+      <div class="flex items-center gap-2 font-medium text-neutral-300">
+        <span class="w-5 h-5 rounded bg-white text-[#081014] flex items-center justify-center font-bold text-xs">§</span>
+        <span>ÉLITE LEGAL © 2026 · Todos los derechos reservados</span>
+      </div>
+      <div class="flex items-center gap-6 font-mono text-[11px]">
+        <a href="#pilares" class="hover:text-white transition-colors">Pilares</a>
+        <a href="#metodologia" class="hover:text-white transition-colors">Metodología</a>
+        <a href="#casos" class="hover:text-white transition-colors">Casos</a>
+        <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(element) {
+      const isActive = element.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      if (!isActive) {
+        element.classList.add('active');
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').classList.add('hidden');
+      document.getElementById('formSuccess').classList.remove('hidden');
+    }
+
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('mainHeader');
+      if (window.scrollY > 50) {
+        header.classList.add('py-3');
+        header.classList.remove('py-6');
+      } else {
+        header.classList.remove('py-3');
+        header.classList.add('py-6');
+      }
+    });
+  </script>
+</body>
+</html>
