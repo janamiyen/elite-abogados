@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ÉLITE LEGAL — Estrategia y Adquisición para Abogados</title>
-  <meta name="description" content="Infraestructura de autoridad, automatización y captación de casos de alto valor para firmas jurídicas." />
+  <title>ÉLITE LEGAL — Consultoría y Crecimiento para Firmas Jurídicas</title>
+  <meta name="description" content="Ayudamos a estudios jurídicos y abogados de élite a diseñar estrategias de crecimiento, optimizar operaciones y captar clientes de alto valor." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23081014'><rect width='24' height='24' rx='4' fill='%23081014'/><path d='M7 6h10v2H7zm0 5h10v2H7zm0 5h6v2H7z' fill='%23fff'/></svg>" />
 
-  <!-- Google Fonts: Geist & Space Mono -->
+  <!-- Google Fonts: Geist & Fragment Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Fragment+Mono:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,18 +23,20 @@
           colors: {
             brand: {
               black: '#081014',
-              darkSurface: '#0d161a',
-              cardBg: '#131e24',
-              grayBorder: 'rgba(255, 255, 255, 0.12)',
-              lightBorder: 'rgba(8, 16, 20, 0.1)',
-              lightBg: '#f2f3f5',
               subtleGray: '#707070',
-              mutedLight: '#c8c8c8',
+              borderGray: '#e5e7eb',
+              lightGray: '#f2f3f5',
+              mutedTag: '#b2b2b2',
             }
           },
           fontFamily: {
             sans: ['Geist', 'sans-serif'],
-            mono: ['"Space Mono"', 'monospace'],
+            mono: ['"Fragment Mono"', '"Space Mono"', 'monospace'],
+          },
+          letterSpacing: {
+            tighter: '-0.05em',
+            tight: '-0.025em',
+            wideTag: '0.08em',
           }
         }
       }
@@ -46,512 +48,585 @@
       background-color: #f2f3f5;
       color: #081014;
       font-family: 'Geist', sans-serif;
-      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     .tag-mono {
-      font-family: 'Space Mono', monospace;
+      font-family: 'Fragment Mono', monospace;
       text-transform: uppercase;
       font-size: 11px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       color: #707070;
     }
     .tag-mono-light {
-      font-family: 'Space Mono', monospace;
+      font-family: 'Fragment Mono', monospace;
       text-transform: uppercase;
       font-size: 11px;
-      letter-spacing: 0.08em;
-      color: #c8c8c8;
+      letter-spacing: 0.09em;
+      color: rgba(255, 255, 255, 0.7);
     }
-    .hero-glow {
-      background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06) 0%, rgba(8,16,20,0) 70%);
+    .hero-btn {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .framer-card {
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .framer-card:hover {
+    .hero-btn:hover {
       transform: translateY(-2px);
     }
     .arrow-icon-btn:hover .arrow-icon-inner {
       transform: translate(2px, -2px);
     }
     .arrow-icon-inner {
-      transition: transform 0.25s ease;
+      transition: transform 0.2s ease;
     }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-      opacity: 0;
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .faq-item.active .faq-answer {
-      max-height: 250px;
-      opacity: 1;
+    .service-card:hover {
+      transform: translateY(-4px);
     }
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
+    .service-card:hover .service-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%);
     }
-    .faq-icon {
-      transition: transform 0.3s ease;
+    .service-card:hover .card-arrow {
+      background-color: #ffffff;
+      color: #081014;
+    }
+    .card-arrow {
+      transition: all 0.25s ease;
     }
   </style>
 </head>
 <body class="selection:bg-neutral-800 selection:text-white">
 
-  <!-- ==================== TOP NAVIGATION ==================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 py-4 md:py-6 transition-all duration-300" id="mainHeader">
-    <div class="w-full max-w-[1160px] flex items-center justify-between px-6 py-3.5 rounded-full backdrop-blur-md bg-[#081014]/85 border border-white/10 text-white shadow-2xl">
-      <a href="#" class="flex items-center gap-2 font-semibold tracking-tight text-lg group">
-        <span class="w-7 h-7 rounded bg-white text-[#081014] flex items-center justify-center font-bold text-sm tracking-tighter shadow">§</span>
-        <span class="tracking-tight text-white group-hover:text-neutral-300 transition-colors">ÉLITE <span class="text-neutral-400 font-normal text-xs uppercase tracking-widest ml-1 font-mono">LEGAL</span></span>
+  <!-- ==================== 1. HERO SECTION (EXACTO SCREENSHOT 1) ==================== -->
+  <section class="relative min-h-[96vh] sm:min-h-screen w-full flex flex-col justify-between text-white overflow-hidden">
+    
+    <!-- Background Image with Real Senior Partner (Screenshot 1) -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://framerusercontent.com/images/4QUqqo5osL671fFQfs0spQu3bA.png" 
+        alt="Élite Legal Managing Partner" 
+        class="w-full h-full object-cover object-center scale-[1.02] filter contrast-[1.02]"
+      />
+      <!-- Cinematic Vignette & Readability Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#081014] via-[#081014]/50 to-[#081014]/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#081014]/85 via-[#081014]/50 to-transparent"></div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <header class="relative z-20 w-full px-6 sm:px-12 py-7 flex items-center justify-between">
+      <!-- Brand Logo (Framer Style: Icon + Text) -->
+      <a href="#" class="flex items-center gap-2.5 text-white tracking-tight text-xl font-medium">
+        <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24">
+          <path d="M4 4h16v3H7v3h11v3H7v7H4V4z"/>
+        </svg>
+        <span class="font-normal text-2xl tracking-tighter">elyte<span class="text-xs align-top font-mono ml-0.5">®</span></span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-[14px] font-medium text-neutral-300">
-        <a href="#pilares" class="hover:text-white transition-colors">Pilares</a>
-        <a href="#metodologia" class="hover:text-white transition-colors">Metodología</a>
-        <a href="#casos" class="hover:text-white transition-colors">Resultados</a>
-        <a href="#faq" class="hover:text-white transition-colors">Preguntas</a>
+      <!-- Center Navigation -->
+      <nav class="hidden md:flex items-center gap-9 text-[14px] font-normal text-white/90">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <div class="relative group cursor-pointer flex items-center gap-1 hover:text-white transition-colors">
+          <span>Services</span>
+          <svg class="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <a href="#case-studies" class="hover:text-white transition-colors">Case studies</a>
+        <a href="#approach" class="hover:text-white transition-colors">Insights</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="#contacto" class="arrow-icon-btn inline-flex items-center gap-2 bg-white text-[#081014] px-4 py-2 rounded-full text-[13px] font-medium hover:bg-neutral-200 transition-all shadow-sm">
-          <span>Agendar Diagnóstico</span>
-          <svg class="w-3.5 h-3.5 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
+      <!-- Right CTA -->
+      <div>
+        <a href="#contact" class="hidden sm:inline-block px-5 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md text-white text-[13px] font-medium transition-all">
+          Get started
         </a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="relative bg-[#081014] text-white min-h-[92vh] flex flex-col justify-end pt-36 pb-16 px-5 sm:px-8 border-b border-white/10 hero-glow overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    <div class="w-full max-w-[1160px] mx-auto relative z-10">
+    <!-- Hero Content (Aligned Left, Exact Typography & Buttons) -->
+    <div class="relative z-10 w-full max-w-[1240px] mx-auto px-6 sm:px-12 pb-16 pt-24 md:pt-36">
       
-      <div class="flex flex-wrap items-center gap-3 mb-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="tag-mono-light text-[10px] text-neutral-300">DISPONIBILIDAD SELECTIVA · ESTUDIOS JURÍDICOS</span>
-        </div>
-        <div class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-white/5">
-          <span class="tag-mono-light text-[10px] text-neutral-400">POSICIONAMIENTO DE ALTO IMPACTO</span>
-        </div>
-      </div>
-
-      <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-normal leading-[1.06] tracking-tighter text-white max-w-5xl mb-8">
-        Redefina la autoridad y el volumen de casos <span class="font-medium text-neutral-200">de alto valor</span> en su firma legal.
+      <h1 class="text-5xl sm:text-7xl md:text-[88px] font-normal leading-[1.03] tracking-tighter text-white max-w-4xl mb-7">
+        Reimagine What Your Business Can Achieve
       </h1>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pt-4 pb-10 border-b border-white/15">
-        <p class="md:col-span-7 text-neutral-400 text-lg sm:text-xl leading-relaxed font-normal max-w-2xl">
-          Ayudamos a estudios jurídicos y abogados especializados a construir sistemas predictivos de captación, filtrar consultas sin fricción y posicionarse como la referencia incuestionable de su sector.
-        </p>
-
-        <div class="md:col-span-5 flex flex-col sm:flex-row md:justify-end gap-3.5">
-          <a href="#contacto" class="arrow-icon-btn inline-flex items-center justify-center gap-2.5 bg-white text-[#081014] px-6 py-3.5 rounded-full text-sm font-semibold hover:bg-neutral-100 transition-all">
-            <span>Consultar Disponibilidad</span>
-            <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-          <a href="#casos" class="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white/5 transition-all">
-            Ver Casos de Éxito
-          </a>
-        </div>
-      </div>
-
-      <div class="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-neutral-400">
-        <div>
-          <span class="block text-white font-mono text-2xl font-semibold tracking-tight">+140%</span>
-          <span class="tag-mono text-[10px] text-neutral-400 mt-1 block">Tasa de Cierre en Consultas</span>
-        </div>
-        <div>
-          <span class="block text-white font-mono text-2xl font-semibold tracking-tight">100%</span>
-          <span class="tag-mono text-[10px] text-neutral-400 mt-1 block">Filtro de Clientes No Calificados</span>
-        </div>
-        <div>
-          <span class="block text-white font-mono text-2xl font-semibold tracking-tight">&lt; 24 hrs</span>
-          <span class="tag-mono text-[10px] text-neutral-400 mt-1 block">Tiempo de Respuesta Automatizado</span>
-        </div>
-        <div>
-          <span class="block text-white font-mono text-2xl font-semibold tracking-tight">Exclusivo</span>
-          <span class="tag-mono text-[10px] text-neutral-400 mt-1 block">Por Especialidad / Región</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== PILLARS SECTION ==================== -->
-  <section id="pilares" class="py-24 sm:py-32 px-5 sm:px-8 max-w-[1160px] mx-auto">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-      <div>
-        <span class="tag-mono mb-3 block">01 / PRINCIPIOS DE ACCIÓN</span>
-        <h2 class="text-3xl sm:text-5xl font-normal tracking-tighter text-[#081014] leading-[1.1]">
-          Estrategia jurídica con impacto medible.
-        </h2>
-      </div>
-      <p class="text-[#707070] text-base max-w-md font-normal leading-relaxed">
-        El prestigio legal tradicional es indispensable, pero sin infraestructura moderna de prospección y conversión, se pierden los casos más rentables del mercado.
+      <p class="text-neutral-300 text-lg sm:text-xl font-normal leading-relaxed max-w-xl mb-10">
+        We help leaders navigate complexity, solve critical challenges, and build stronger, more resilient organizations for the future.
       </p>
-    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="framer-card bg-white p-8 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between min-h-[320px]">
-        <div>
-          <div class="w-10 h-10 rounded-lg bg-[#081014]/5 flex items-center justify-center mb-6 text-sm font-mono font-bold text-[#081014]">01</div>
-          <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-3">Enfoque en Casos Premium</h3>
-          <p class="text-[#707070] text-sm leading-relaxed">
-            Eliminamos las consultas gratuitas o de bajo ticket mediante filtrado estratégico antes de que lleguen al tiempo de los socios de la firma.
-          </p>
-        </div>
-        <div class="pt-6 border-t border-black/5">
-          <span class="tag-mono text-[10px]">MAYOR RENTABILIDAD POR HORA</span>
-        </div>
-      </div>
-
-      <div class="framer-card bg-white p-8 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between min-h-[320px]">
-        <div>
-          <div class="w-10 h-10 rounded-lg bg-[#081014]/5 flex items-center justify-center mb-6 text-sm font-mono font-bold text-[#081014]">02</div>
-          <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-3">Autoridad Digital Sobria</h3>
-          <p class="text-[#707070] text-sm leading-relaxed">
-            Diseño e identidad digital que transmiten credibilidad institucional, solvencia y confidencialidad absoluta, lejos de modas de marketing genérico.
-          </p>
-        </div>
-        <div class="pt-6 border-t border-black/5">
-          <span class="tag-mono text-[10px]">REPUTACIÓN &amp; CONFIANZA</span>
-        </div>
-      </div>
-
-      <div class="framer-card bg-white p-8 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between min-h-[320px]">
-        <div>
-          <div class="w-10 h-10 rounded-lg bg-[#081014]/5 flex items-center justify-center mb-6 text-sm font-mono font-bold text-[#081014]">03</div>
-          <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-3">Atención Inmediata</h3>
-          <p class="text-[#707070] text-sm leading-relaxed">
-            Sistemas automatizados que responden a los clientes en el momento exacto en que buscan asesoramiento legal, agendando citas directamente en su calendario.
-          </p>
-        </div>
-        <div class="pt-6 border-t border-black/5">
-          <span class="tag-mono text-[10px]">CERO TIEMPO MUERTO</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== METHODOLOGY SECTION ==================== -->
-  <section id="metodologia" class="bg-[#081014] text-white py-24 sm:py-32 px-5 sm:px-8 border-y border-white/10">
-    <div class="max-w-[1160px] mx-auto">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
-        <div>
-          <span class="tag-mono-light mb-3 block text-neutral-400">02 / SISTEMA COMPROBADO</span>
-          <h2 class="text-3xl sm:text-5xl font-normal tracking-tighter text-white leading-[1.1]">
-            El método para escalar firmas legales.
-          </h2>
-        </div>
-        <p class="text-neutral-400 text-base max-w-md font-normal leading-relaxed">
-          Diseñado específicamente para abogados que no tienen tiempo que perder en experimentos y exigen resultados con métricas claras.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between min-h-[340px]">
-          <div>
-            <div class="flex items-center justify-between mb-8">
-              <span class="font-mono text-xs text-neutral-400 tracking-wider">ETAPA 01</span>
-              <span class="w-2 h-2 rounded-full bg-white/20"></span>
-            </div>
-            <h3 class="text-2xl font-medium tracking-tight text-white mb-3">Diagnóstico de Práctica</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
-              Analizamos su especialidad (corporativo, penal, laboral, tributario, civil), margen por caso y perfil de cliente ideal para enfocar los esfuerzos donde mayor rentabilidad existe.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-300">Entrega: Mapa de Oportunidad Jurídica</div>
-        </div>
-
-        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between min-h-[340px]">
-          <div>
-            <div class="flex items-center justify-between mb-8">
-              <span class="font-mono text-xs text-neutral-400 tracking-wider">ETAPA 02</span>
-              <span class="w-2 h-2 rounded-full bg-white/20"></span>
-            </div>
-            <h3 class="text-2xl font-medium tracking-tight text-white mb-3">Infraestructura &amp; Filtros</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
-              Implementamos landing pages de alta conversión, embudos con formularios de precalificación y agendas conectadas a WhatsApp y correo corporativo.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-300">Entrega: Sistema Integral de Captación</div>
-        </div>
-
-        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between min-h-[340px]">
-          <div>
-            <div class="flex items-center justify-between mb-8">
-              <span class="font-mono text-xs text-neutral-400 tracking-wider">ETAPA 03</span>
-              <span class="w-2 h-2 rounded-full bg-white/20"></span>
-            </div>
-            <h3 class="text-2xl font-medium tracking-tight text-white mb-3">Tráfico &amp; Cierre de Casos</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
-              Activamos campañas orientadas a intención directa de contratación, asegurando un flujo constante de clientes calificados listos para firmar patrocinio.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-300">Entrega: Reporte Mensual de Retorno (ROI)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== CASE STUDIES ==================== -->
-  <section id="casos" class="py-24 sm:py-32 px-5 sm:px-8 max-w-[1160px] mx-auto">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-      <div>
-        <span class="tag-mono mb-3 block">03 / CASOS DE ESTUDIO</span>
-        <h2 class="text-3xl sm:text-5xl font-normal tracking-tighter text-[#081014] leading-[1.1]">
-          Resultados tangibles para firmas socias.
-        </h2>
-      </div>
-      <a href="#contacto" class="arrow-icon-btn inline-flex items-center gap-2 text-sm font-semibold text-[#081014] hover:text-neutral-600 transition-colors">
-        <span>Conocer más casos</span>
-        <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group bg-white rounded-3xl border border-black/5 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-        <div class="p-8 sm:p-10">
-          <div class="flex items-center justify-between mb-6">
-            <span class="tag-mono">DERECHO CORPORATIVO &amp; M&amp;A</span>
-            <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#081014]/5 text-[#081014] font-medium">+185% Facturación</span>
-          </div>
-          <h3 class="text-2xl font-medium tracking-tight text-[#081014] mb-4">Estudio Varela &amp; Asociados</h3>
-          <p class="text-[#707070] text-sm leading-relaxed mb-6">
-            Reestructuramos completamente su canal de captación digital. Se implementó un filtro de facturación mínima para clientes corporativos, eliminando el 80% de llamadas no productivas y cerrando 12 nuevos convenios de asesoría anual.
-          </p>
-        </div>
-        <div class="px-8 pb-8 sm:px-10 sm:pb-10 pt-4 border-t border-black/5 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-xs">MV</div>
-            <div>
-              <p class="text-xs font-semibold text-[#081014]">Dr. Martín Varela</p>
-              <p class="text-[11px] text-[#707070]">Socio Principal</p>
-            </div>
-          </div>
-          <span class="tag-mono text-[10px]">CASO AUDITADO</span>
-        </div>
-      </div>
-
-      <div class="group bg-white rounded-3xl border border-black/5 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-        <div class="p-8 sm:p-10">
-          <div class="flex items-center justify-between mb-6">
-            <span class="tag-mono">DERECHO TRIBUTARIO &amp; LITIGIOS</span>
-            <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#081014]/5 text-[#081014] font-medium">+3.4x Retorno Inversión</span>
-          </div>
-          <h3 class="text-2xl font-medium tracking-tight text-[#081014] mb-4">Albarracín &amp; Partners</h3>
-          <p class="text-[#707070] text-sm leading-relaxed mb-6">
-            Diseño e implementación de un sistema de captación en línea para litigios fiscales complejos. El estudio pasó de depender exclusivamente del boca a boca a recibir un flujo constante y predecible de consultas de alto patrimonio.
-          </p>
-        </div>
-        <div class="px-8 pb-8 sm:px-10 sm:pb-10 pt-4 border-t border-black/5 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-neutral-800 text-white flex items-center justify-center font-bold text-xs">CA</div>
-            <div>
-              <p class="text-xs font-semibold text-[#081014]">Dra. Camila Albarracín</p>
-              <p class="text-[11px] text-[#707070]">Especialista Tributaria</p>
-            </div>
-          </div>
-          <span class="tag-mono text-[10px]">CASO AUDITADO</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== TESTIMONIAL ==================== -->
-  <section class="bg-neutral-900 text-white py-20 px-5 sm:px-8">
-    <div class="max-w-[860px] mx-auto text-center">
-      <span class="tag-mono-light text-neutral-400 mb-6 inline-block">EXPERIENCIA DE NUESTROS CLIENTES</span>
-      <blockquote class="text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight leading-snug text-neutral-100 mb-8">
-        “El cambio fue inmediato. Dejamos de perder tiempo atendiendo consultas que no llegaban a nada y hoy el 90% de las reuniones que agendamos corresponden a clientes corporativos con presupuesto real.”
-      </blockquote>
-      <div class="inline-flex items-center gap-3">
-        <div class="text-left">
-          <p class="text-sm font-semibold text-white">Dr. Rodrigo Silveira</p>
-          <p class="text-xs text-neutral-400 font-mono">SILVEIRA &amp; ASOCIADOS · BUENOS AIRES</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== FAQ ==================== -->
-  <section id="faq" class="py-24 sm:py-32 px-5 sm:px-8 max-w-[1160px] mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-      <div class="lg:col-span-5">
-        <span class="tag-mono mb-3 block">04 / RESOLVIENDO DUDAS</span>
-        <h2 class="text-3xl sm:text-5xl font-normal tracking-tighter text-[#081014] leading-[1.1] mb-6">
-          Preguntas Frecuentes.
-        </h2>
-        <p class="text-[#707070] text-sm sm:text-base leading-relaxed mb-8">
-          Si su estudio requiere condiciones particulares o acuerdos de confidencialidad estrictos (NDA), estamos a su disposición.
-        </p>
-        <a href="#contacto" class="arrow-icon-btn inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-[#081014] text-white text-xs font-semibold hover:bg-neutral-800 transition-all">
-          <span>Hacer una consulta directa</span>
-          <svg class="w-3.5 h-3.5 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Buttons: Book a Call (White with arrow) & View Case Studies (Dark bordered) -->
+      <div class="flex flex-wrap items-center gap-4">
+        
+        <a href="#contact" class="hero-btn arrow-icon-btn inline-flex items-center gap-3 bg-white text-[#081014] px-7 py-3.5 rounded-none font-medium text-sm transition-all shadow-md">
+          <span>Book a Call</span>
+          <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
         </a>
+
+        <a href="#case-studies" class="hero-btn inline-flex items-center px-7 py-3.5 rounded-none border border-white/30 bg-black/30 backdrop-blur-md text-white text-sm font-medium hover:bg-white/10 transition-all">
+          View Case Studies
+        </a>
+
       </div>
 
-      <div class="lg:col-span-7 space-y-4" id="faqList">
-        <div class="faq-item active bg-white rounded-2xl p-6 border border-black/5 shadow-sm cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="text-base sm:text-lg font-medium text-[#081014] tracking-tight">
-              ¿Cómo aseguran que los contactos sean realmente calificados?
-            </h3>
-            <span class="faq-icon text-xl text-[#707070] font-mono select-none">+</span>
-          </div>
-          <div class="faq-answer mt-4 text-[#707070] text-sm leading-relaxed border-t border-black/5 pt-4">
-            Diseñamos filtros previos en el formulario de contacto (tipo de causa, monto involucrado, urgencia y presupuesto disponible). Solo los prospectos que cumplen el criterio mínimo del estudio acceden a la agenda del abogado.
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-2xl p-6 border border-black/5 shadow-sm cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="text-base sm:text-lg font-medium text-[#081014] tracking-tight">
-              ¿Esto respeta las normas de ética del Colegio de Abogados?
-            </h3>
-            <span class="faq-icon text-xl text-[#707070] font-mono select-none">+</span>
-          </div>
-          <div class="faq-answer mt-4 text-[#707070] text-sm leading-relaxed border-t border-black/5 pt-4">
-            Absolutamente. Trabajamos bajo un formato institucional y sobrio. No hacemos ofertas agresivas ni promesas de resultados prohibidas por la deontología jurídica; nos enfocamos en autoridad, claridad de especialidad y facilidad de contacto.
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-2xl p-6 border border-black/5 shadow-sm cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="text-base sm:text-lg font-medium text-[#081014] tracking-tight">
-              ¿Cuánto tiempo toma implementar el sistema?
-            </h3>
-            <span class="faq-icon text-xl text-[#707070] font-mono select-none">+</span>
-          </div>
-          <div class="faq-answer mt-4 text-[#707070] text-sm leading-relaxed border-t border-black/5 pt-4">
-            El despliegue completo de la infraestructura (diseño, configuración de embudo, automatizaciones de agenda y campañas de lanzamiento) se completa habitualmente entre 10 y 14 días hábiles.
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-2xl p-6 border border-black/5 shadow-sm cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="text-base sm:text-lg font-medium text-[#081014] tracking-tight">
-              ¿Puedo integrarlo directamente con mi WhatsApp o CRM actual?
-            </h3>
-            <span class="faq-icon text-xl text-[#707070] font-mono select-none">+</span>
-          </div>
-          <div class="faq-answer mt-4 text-[#707070] text-sm leading-relaxed border-t border-black/5 pt-4">
-            Sí. Conectamos cada solicitud para que ingrese de inmediato al WhatsApp oficial del estudio, a Google Calendar / Calendly y a su CRM o casilla corporativa sin pasos manuales.
-          </div>
-        </div>
-      </div>
     </div>
+
+    <!-- Bottom Ticker / Subbar -->
+    <div class="relative z-10 w-full border-t border-white/10 px-6 sm:px-12 py-4 flex items-center justify-between text-xs font-mono text-white/60">
+      <span>Build with intention</span>
+      <span class="hidden sm:inline">Scale with confidence</span>
+    </div>
+
   </section>
 
-  <!-- ==================== CONTACT / CTA ==================== -->
-  <section id="contacto" class="bg-[#081014] text-white py-24 sm:py-32 px-5 sm:px-8 border-t border-white/10 relative overflow-hidden">
-    <div class="max-w-[960px] mx-auto text-center relative z-10">
-      <span class="tag-mono-light mb-4 inline-block text-neutral-400">05 / PRIMER PASO</span>
-      <h2 class="text-4xl sm:text-6xl font-normal tracking-tighter text-white leading-[1.08] mb-6">
-        Construyamos la infraestructura de crecimiento para su firma.
-      </h2>
-      <p class="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-        Agende una sesión confidencial de diagnóstico de 20 minutos para evaluar su especialidad jurídica y diseñar la estrategia a medida.
-      </p>
+  <!-- ==================== 2. PILLARS SECTION (EXACTO SCREENSHOT 2) ==================== -->
+  <section id="about" class="bg-[#f2f3f5] text-[#081014] py-24 sm:py-36 px-6 sm:px-12 border-b border-black/5">
+    <div class="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      <!-- Left Column: Tag, Heading, Roman Numeral Items -->
+      <div class="lg:col-span-6 flex flex-col justify-between">
+        
+        <div>
+          <span class="tag-mono mb-4 block text-[#707070]">PILLARS</span>
+          
+          <h2 class="text-4xl sm:text-6xl font-normal tracking-tighter text-[#081014] leading-[1.08] mb-16">
+            Elevating Your Strategy With Measurable Impact
+          </h2>
+        </div>
 
-      <div class="bg-white/5 border border-white/15 rounded-3xl p-6 sm:p-10 max-w-xl mx-auto backdrop-blur-md shadow-2xl text-left">
-        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-          <div>
-            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">Nombre &amp; Apellido</label>
-            <input type="text" required placeholder="Dr. Juan Manuel Pérez" class="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+        <!-- Pillar I -->
+        <div class="space-y-12">
+          
+          <div class="border-t border-black/10 pt-6">
+            <div class="w-7 h-7 rounded-full border border-black/15 flex items-center justify-center font-mono text-xs text-neutral-500 mb-5">
+              I
+            </div>
+            <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-2">
+              Insight-Driven
+            </h3>
+            <p class="text-[#707070] text-sm leading-relaxed max-w-md">
+              Data-backed analysis that removes guesswork.
+            </p>
           </div>
 
-          <div>
-            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">Estudio o Especialidad Principal</label>
-            <input type="text" required placeholder="Ej: Derecho Laboral Corporativo / Penal Económico" class="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+          <!-- Pillar II -->
+          <div class="border-t border-black/10 pt-6">
+            <div class="w-7 h-7 rounded-full border border-black/15 flex items-center justify-center font-mono text-xs text-neutral-500 mb-5">
+              II
+            </div>
+            <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-2">
+              Practical Solutions
+            </h3>
+            <p class="text-[#707070] text-sm leading-relaxed max-w-md">
+              Clear actions tailored to your unique situation.
+            </p>
           </div>
 
-          <div>
-            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">WhatsApp / Celular de Contacto</label>
-            <input type="tel" required placeholder="+54 9 11 0000-0000" class="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+          <!-- Pillar III -->
+          <div class="border-t border-black/10 pt-6">
+            <div class="w-7 h-7 rounded-full border border-black/15 flex items-center justify-center font-mono text-xs text-neutral-500 mb-5">
+              III
+            </div>
+            <h3 class="text-xl font-medium tracking-tight text-[#081014] mb-2">
+              Long-Term Focus
+            </h3>
+            <p class="text-[#707070] text-sm leading-relaxed max-w-md">
+              Strategies that compound, not quick fixes. Work directly with seasoned legal consultants.
+            </p>
           </div>
 
-          <div class="pt-2">
-            <button type="submit" class="arrow-icon-btn w-full inline-flex items-center justify-center gap-2 bg-white text-[#081014] py-3.5 px-6 rounded-xl font-semibold text-sm hover:bg-neutral-200 transition-all shadow-md">
-              <span>Solicitar Sesión de Diagnóstico</span>
-              <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        </div>
+
+      </div>
+
+      <!-- Right Column: Consultant Portrait + Overlay Badge (Screenshot 2) -->
+      <div class="lg:col-span-6 relative">
+        <div class="relative w-full aspect-[4/5] rounded-none overflow-hidden shadow-2xl bg-neutral-900">
+          <img 
+            src="https://framerusercontent.com/images/1GSEJQEK7UwRemkFHwlIiZOJgxI.png" 
+            alt="Alex Morgan - Founder" 
+            class="w-full h-full object-cover object-center filter contrast-[1.03]"
+          />
+          
+          <!-- Bottom Floating Bar on the image (Alex Morgan / Speak with us) -->
+          <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-gradient-to-t from-black/90 via-black/70 to-transparent flex items-center justify-between text-white backdrop-blur-[2px]">
+            
+            <div class="flex items-center gap-3.5">
+              <img 
+                src="https://framerusercontent.com/images/pLMLbSQLNJvN2K6Cwk5nzpMQz8o.png" 
+                alt="Alex Morgan Avatar" 
+                class="w-12 h-12 rounded-full object-cover border border-white/20 shadow-sm"
+              />
+              <div>
+                <p class="text-sm font-semibold tracking-tight text-white leading-tight">Alex Morgan</p>
+                <p class="text-[11px] font-mono uppercase tracking-widest text-neutral-400 mt-0.5">FOUNDER @ ELITE</p>
+              </div>
+            </div>
+
+            <a href="#contact" class="arrow-icon-btn inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-white transition-colors">
+              <span>Speak with us</span>
+              <svg class="w-3.5 h-3.5 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
-            </button>
+            </a>
+
           </div>
-
-          <p class="text-center text-[11px] text-neutral-500 pt-2 font-mono">
-            Respuesta y confirmación directa dentro de las 4 horas hábiles.
-          </p>
-        </form>
-
-        <div id="formSuccess" class="hidden text-center py-8">
-          <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 text-xl">✓</div>
-          <h3 class="text-lg font-medium text-white mb-2">Solicitud Recibida con Éxito</h3>
-          <p class="text-xs text-neutral-400">Nos pondremos en contacto a la brevedad para coordinar la sesión.</p>
         </div>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 3. SERVICES SECTION (EXACTO SCREENSHOT 3) ==================== -->
+  <section id="services" class="bg-[#f2f3f5] py-24 sm:py-36 px-6 sm:px-12 border-b border-black/5">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <!-- Section Header -->
+      <div class="mb-14">
+        <span class="tag-mono mb-4 block text-[#707070]">SERVICES</span>
+        <h2 class="text-4xl sm:text-6xl font-normal tracking-tighter text-[#081014] leading-[1.08] max-w-3xl">
+          Consulting Services Designed for Real Business Outcomes
+        </h2>
+      </div>
+
+      <!-- 3 Service Cards Grid with Hover and Corner Arrow Box -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Business Strategy -->
+        <div class="service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img 
+              src="https://framerusercontent.com/images/tD1IQTVk5QSeOmBcFgTJiJC8pPg.jpg" 
+              alt="Business Strategy" 
+              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+            />
+            <!-- Gradient Overlay -->
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300"></div>
+
+            <!-- Top Right Arrow Box -->
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+
+            <!-- Card Bottom Title -->
+            <div class="absolute bottom-5 left-5 right-5">
+              <h3 class="text-2xl font-medium tracking-tight text-white">
+                Business Strategy
+              </h3>
+            </div>
+          </div>
+
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            Reshape your direction with a refined strategy built for the next stage of growth.
+          </p>
+        </div>
+
+        <!-- Card 2: Advisory Retainers -->
+        <div class="service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img 
+              src="https://framerusercontent.com/images/Uo4kHKvmrD87exvy5Z2rMEpvts.jpg" 
+              alt="Advisory Retainers" 
+              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300"></div>
+
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+
+            <div class="absolute bottom-5 left-5 right-5">
+              <h3 class="text-2xl font-medium tracking-tight text-white">
+                Advisory Retainers
+              </h3>
+            </div>
+          </div>
+
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            Ongoing strategic guidance to support your leadership, teams, and decisions.
+          </p>
+        </div>
+
+        <!-- Card 3: Operations Optimization -->
+        <div class="service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img 
+              src="https://framerusercontent.com/images/SmKpJArNfpH0J4YgHNcqsyxuyEA.jpg" 
+              alt="Operations Optimization" 
+              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300"></div>
+
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+
+            <div class="absolute bottom-5 left-5 right-5">
+              <h3 class="text-2xl font-medium tracking-tight text-white">
+                Operations Optimization
+              </h3>
+            </div>
+          </div>
+
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            Remove friction, build repeatable systems, and improve organizational efficiency.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 4. PROVEN APPROACH (EXACTO SCREENSHOT 4: 6 BOXES) ==================== -->
+  <section id="approach" class="bg-[#f2f3f5] py-24 sm:py-36 px-6 sm:px-12 border-b border-black/5">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <!-- Section Title -->
+      <div class="mb-20">
+        <h2 class="text-4xl sm:text-6xl font-normal tracking-tighter text-[#081014] leading-[1.08] max-w-3xl">
+          A Proven Approach to Transforming Your Business
+        </h2>
+      </div>
+
+      <!-- 6 Grid Items with Minimal Icons (Discovery, Analysis, Strategy, Execution, Integration, Optimization) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
+        
+        <!-- 1. Discovery -->
+        <div class="space-y-4">
+          <!-- Icon Discovery (Minimal Screen/Card) -->
+          <div class="text-[#081014] mb-6">
+            <svg class="w-6 h-6 stroke-[#081014]" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="14" rx="1"></rect>
+              <line x1="7" y1="20" x2="17" y2="20"></line>
+              <line x1="12" y1="18" x2="12" y2="20"></line>
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-[#081014] tracking-tight">Discovery</h3>
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            Duna's platform is built to help enterprises grow. Optimised to eliminate friction and instantly deliver higher conversion.
+          </p>
+        </div>
+
+        <!-- 2. Analysis -->
+        <div class="space-y-4">
+          <!-- Icon Analysis (Bar chart / equalizer) -->
+          <div class="text-[#081014] mb-6">
+            <svg class="w-6 h-6 stroke-[#081014]" fill="none" stroke-width="2.5" viewBox="0 0 24 24">
+              <line x1="6" y1="18" x2="6" y2="10"></line>
+              <line x1="12" y1="18" x2="12" y2="6"></line>
+              <line x1="18" y1="18" x2="18" y2="13"></line>
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-[#081014] tracking-tight">Analysis</h3>
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            A powerful policy engine translates compliance into code — enabling the industry's most detailed audit trails.
+          </p>
+        </div>
+
+        <!-- 3. Strategy -->
+        <div class="space-y-4">
+          <!-- Icon Strategy (Roadmap/Target) -->
+          <div class="text-[#081014] mb-6">
+            <svg class="w-6 h-6 stroke-[#081014]" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="1"></rect>
+              <line x1="9" y1="9" x2="15" y2="9"></line>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-[#081014] tracking-tight">Strategy</h3>
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            We develop a roadmap that aligns goals, workflows, and automation opportunities for maximum impact.
+          </p>
+        </div>
+
+        <!-- 4. Execution -->
+        <div class="space-y-4">
+          <!-- Icon Execution (Terminal / Screen) -->
+          <div class="text-[#081014] mb-6">
+            <svg class="w-6 h-6 stroke-[#081014]" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-[#081014] tracking-tight">Execution</h3>
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            Eliminate manual checks, endless emails and lengthy reviews — by automating analyst tasks and compliance workflows.
+          </p>
+        </div>
+
+        <!-- 5. Integration -->
+        <div class="space-y-4">
+          <!-- Icon Integration (Network nodes) -->
+          <div class="text-[#081014] mb-6">
+            <svg class="w-6 h-6 stroke-[#081014]" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-[#081014] tracking-tight">Integration</h3>
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            We connect your tools, platforms, and data into one seamless system that eliminates manual work.
+          </p>
+        </div>
+
+        <!-- 6. Optimization -->
+        <div class="space-y-4">
+          <!-- Icon Optimization (Upward wave / trend) -->
+          <div class="text-[#081014] mb-6">
+            <svg class="w-6 h-6 stroke-[#081014]" fill="none" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-[#081014] tracking-tight">Optimization</h3>
+          <p class="text-[#707070] text-sm leading-relaxed font-normal">
+            We monitor performance, refine processes, and continuously improve results based on real metrics.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 5. CASE STUDIES (LIGHTBOX & CLOUDWATCH) ==================== -->
+  <section id="case-studies" class="bg-[#081014] text-white py-24 sm:py-36 px-6 sm:px-12 border-b border-white/10">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <span class="tag-mono-light mb-4 block">RESULTS FROM ENGAGEMENTS</span>
+          <h2 class="text-4xl sm:text-6xl font-normal tracking-tighter text-white leading-[1.08]">
+            Selected Case Studies
+          </h2>
+        </div>
+        <a href="#contact" class="arrow-icon-btn inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white font-medium transition-colors">
+          <span>See all case studies</span>
+          <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Case 1: Lightbox -->
+        <div class="bg-white/5 border border-white/10 p-8 sm:p-10 flex flex-col justify-between hover:bg-white/[0.08] transition-colors">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <span class="text-xs font-mono text-neutral-400">01 / RESTRUCTURING</span>
+              <span class="text-xs font-mono px-2.5 py-1 bg-white/10 text-white rounded">LIGHTBOX</span>
+            </div>
+            <h3 class="text-2xl font-medium tracking-tight text-white mb-4">Lightbox Software</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-8">
+              Lightbox Software partnered with us to rebuild its operating model after a year of rapid growth left teams misaligned and delivery cycles slowing. Through strategic architecture and leadership alignment, the company restored momentum across product and legal operations.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-semibold text-white">David Chen — Managing Director</span>
+            <a href="#contact" class="text-xs font-mono text-neutral-400 hover:text-white transition-colors">Discover case →</a>
+          </div>
+        </div>
+
+        <!-- Case 2: Cloudwatch -->
+        <div class="bg-white/5 border border-white/10 p-8 sm:p-10 flex flex-col justify-between hover:bg-white/[0.08] transition-colors">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <span class="text-xs font-mono text-neutral-400">02 / MARKET EXPANSION</span>
+              <span class="text-xs font-mono px-2.5 py-1 bg-white/10 text-white rounded">CLOUDWATCH</span>
+            </div>
+            <h3 class="text-2xl font-medium tracking-tight text-white mb-4">Cloudwatch Global</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-8">
+              Cloudwatch engaged our team to clarify its approach to entering a new market after conflicting priorities slowed progress. By redesigning leadership decision frameworks and implementing a structured execution rhythm, the firm accelerated its expansion efforts.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-semibold text-white">Sarah Bennett — Founder</span>
+            <a href="#contact" class="text-xs font-mono text-neutral-400 hover:text-white transition-colors">Discover case →</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 6. CONTACT & CALL TO ACTION ==================== -->
+  <section id="contact" class="bg-[#081014] text-white py-24 sm:py-36 px-6 sm:px-12 relative overflow-hidden border-t border-white/10">
+    <div class="max-w-[800px] mx-auto text-center relative z-10">
+      
+      <span class="tag-mono-light mb-4 inline-block">SCHEDULE A CONSULTATION</span>
+      <h2 class="text-4xl sm:text-6xl font-normal tracking-tighter text-white leading-[1.08] mb-6">
+        Ready to build with intention?
+      </h2>
+      <p class="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-10">
+        Book a discovery session to evaluate your current challenges and outline a tailored roadmap for your firm.
+      </p>
+
+      <!-- Clean Form -->
+      <form onsubmit="event.preventDefault(); alert('Thank you! We will reach out shortly.');" class="bg-white/5 border border-white/15 p-8 sm:p-10 max-w-lg mx-auto text-left shadow-2xl">
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">Full Name</label>
+            <input type="text" required placeholder="Alex Morgan" class="w-full bg-white/10 border border-white/15 px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">Firm / Company</label>
+            <input type="text" required placeholder="Firm Name or Legal Specialty" class="w-full bg-white/10 border border-white/15 px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5">Email or WhatsApp</label>
+            <input type="text" required placeholder="contact@domain.com or +1 555-0123" class="w-full bg-white/10 border border-white/15 px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors" />
+          </div>
+
+          <button type="submit" class="hero-btn arrow-icon-btn w-full inline-flex items-center justify-center gap-2 bg-white text-[#081014] py-3.5 px-6 font-semibold text-sm hover:bg-neutral-200 transition-all mt-4">
+            <span>Book a Consultation</span>
+            <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </button>
+        </div>
+      </form>
+
     </div>
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-[#050b0e] text-white py-12 px-5 sm:px-8 border-t border-white/5">
-    <div class="max-w-[1160px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-400">
-      <div class="flex items-center gap-2 font-medium text-neutral-300">
-        <span class="w-5 h-5 rounded bg-white text-[#081014] flex items-center justify-center font-bold text-xs">§</span>
-        <span>ÉLITE LEGAL © 2026 · Todos los derechos reservados</span>
+  <footer class="bg-[#050b0e] text-white py-12 px-6 sm:px-12 border-t border-white/5">
+    <div class="max-w-[1240px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-400">
+      <div class="flex items-center gap-2">
+        <span class="font-medium text-white text-base">elyte<span class="text-[10px] font-mono">®</span></span>
+        <span>© 2026. All rights reserved.</span>
       </div>
-      <div class="flex items-center gap-6 font-mono text-[11px]">
-        <a href="#pilares" class="hover:text-white transition-colors">Pilares</a>
-        <a href="#metodologia" class="hover:text-white transition-colors">Metodología</a>
-        <a href="#casos" class="hover:text-white transition-colors">Casos</a>
-        <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+      <div class="flex items-center gap-8 font-mono text-[11px]">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#approach" class="hover:text-white transition-colors">Approach</a>
+        <a href="#case-studies" class="hover:text-white transition-colors">Cases</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    function toggleFaq(element) {
-      const isActive = element.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      if (!isActive) {
-        element.classList.add('active');
-      }
-    }
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      document.getElementById('contactForm').classList.add('hidden');
-      document.getElementById('formSuccess').classList.remove('hidden');
-    }
-
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('mainHeader');
-      if (window.scrollY > 50) {
-        header.classList.add('py-3');
-        header.classList.remove('py-6');
-      } else {
-        header.classList.remove('py-3');
-        header.classList.add('py-6');
-      }
-    });
-  </script>
 </body>
 </html>
