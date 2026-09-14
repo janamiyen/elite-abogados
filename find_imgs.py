@@ -8,8 +8,10 @@ html_content = """<!DOCTYPE html>
   <title>ÉLITE LEGAL — Consultoría y Crecimiento para Firmas Jurídicas</title>
   <meta name="description" content="Ayudamos a estudios jurídicos y abogados de élite a diseñar estrategias de crecimiento, optimizar operaciones y captar clientes de alto valor." />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23081014'><rect width='100' height='100' rx='16' fill='%23081014'/><path d='M20 20h60v12H20zm0 18h60v12H44a14 14 0 0 0-14 14v16H20V50a12 12 0 0 1 12-12zm24 24h36v18H68V62H44z' fill='%23ffffff'/><image href='images/isotipo.png' width='100' height='100'/></svg>" />
+  <!-- Favicon (Isotipo Oficial) -->
+  <link rel="icon" type="image/png" href="images/isotipo.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="images/isotipo.png" />
 
   <!-- Google Fonts: Geist & Fragment Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
