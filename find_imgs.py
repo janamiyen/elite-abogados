@@ -9,7 +9,7 @@ html_content = """<!DOCTYPE html>
   <meta name="description" content="Ayudamos a estudios jurídicos y abogados de élite a diseñar estrategias de crecimiento, optimizar operaciones y captar clientes de alto valor." />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23081014'><rect width='24' height='24' rx='4' fill='%23081014'/><path d='M7 6h10v2H7zm0 5h10v2H7zm0 5h6v2H7z' fill='%23fff'/></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23081014'><rect width='100' height='100' rx='16' fill='%23081014'/><path d='M20 20h60v12H20zm0 18h60v12H44a14 14 0 0 0-14 14v16H20V50a12 12 0 0 1 12-12zm24 24h36v18H68V62H44z' fill='%23ffffff'/><image href='images/isotipo.png' width='100' height='100'/></svg>" />
 
   <!-- Google Fonts: Geist & Fragment Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -218,11 +218,13 @@ html_content = """<!DOCTYPE html>
 
     <!-- Top Navigation Bar (Animated entrance) -->
     <header class="hero-delay-nav relative z-20 w-full px-6 sm:px-12 py-4 sm:py-5 flex items-center justify-between shrink-0">
-      <!-- Brand Logo (Framer Style: Icon + Text) -->
-      <a href="#" class="flex items-center gap-2.5 text-white tracking-tight text-xl font-medium">
-        <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24">
-          <path d="M4 4h16v3H7v3h11v3H7v7H4V4z"/>
-        </svg>
+      <!-- Brand Logo (Isotipo + Text) -->
+      <a href="#" class="flex items-center gap-3 text-white tracking-tight text-xl font-medium group">
+        <img 
+          src="images/isotipo.png" 
+          alt="Isotipo" 
+          class="w-7 h-7 object-contain brightness-100 group-hover:opacity-90 transition-opacity"
+        />
         <span class="font-normal text-2xl tracking-tighter">elyte<span class="text-xs align-top font-mono ml-0.5">®</span></span>
       </a>
 
@@ -721,8 +723,14 @@ html_content = """<!DOCTYPE html>
   <!-- ==================== FOOTER ==================== -->
   <footer class="bg-[#050b0e] text-white py-12 px-6 sm:px-12 border-t border-white/5">
     <div class="max-w-[1240px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-400">
-      <div class="flex items-center gap-2">
-        <span class="font-medium text-white text-base">elyte<span class="text-[10px] font-mono">®</span></span>
+      <div class="flex items-center gap-3">
+        <img 
+          src="images/isotipo.png" 
+          alt="Isotipo" 
+          class="w-6 h-6 object-contain brightness-100"
+        />
+        <span class="font-medium text-white text-base tracking-tight">elyte<span class="text-[10px] font-mono">®</span></span>
+        <span class="text-neutral-500">|</span>
         <span>© 2026. All rights reserved.</span>
       </div>
       <div class="flex items-center gap-8 font-mono text-[11px]">
