@@ -202,10 +202,10 @@ html_content = """<!DOCTYPE html>
 <body class="selection:bg-neutral-800 selection:text-white">
 
   <!-- ==================== 1. HERO SECTION (EXACTO 100VH VIEWPORT SCREEN) ==================== -->
-  <section class="relative h-screen h-[100dvh] w-full flex flex-col justify-between text-white overflow-hidden">
+  <section class="relative h-screen h-[100dvh] max-h-screen w-full flex flex-col justify-between text-white overflow-hidden box-border">
     
     <!-- Background Image with Real Senior Partner + Cinematic Zoom Out (Screenshot 1) -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <img 
         src="https://framerusercontent.com/images/4QUqqo5osL671fFQfs0spQu3bA.png" 
         alt="Élite Legal Managing Partner" 
@@ -217,7 +217,7 @@ html_content = """<!DOCTYPE html>
     </div>
 
     <!-- Top Navigation Bar (Animated entrance) -->
-    <header class="hero-delay-nav relative z-20 w-full px-6 sm:px-12 py-5 sm:py-6 flex items-center justify-between shrink-0">
+    <header class="hero-delay-nav relative z-20 w-full px-6 sm:px-12 py-4 sm:py-5 flex items-center justify-between shrink-0">
       <!-- Brand Logo (Framer Style: Icon + Text) -->
       <a href="#" class="flex items-center gap-2.5 text-white tracking-tight text-xl font-medium">
         <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24">
@@ -247,29 +247,30 @@ html_content = """<!DOCTYPE html>
       </div>
     </header>
 
-    <!-- Hero Content (Aligned Left, Left-to-Right Entrance, Exact Typography & Buttons) -->
-    <div class="relative z-10 w-full max-w-[1240px] mx-auto px-6 sm:px-12 my-auto flex flex-col justify-center">
+    <!-- Hero Content (Centered vertically in remaining viewport space) -->
+    <div class="relative z-10 w-full max-w-[1240px] mx-auto px-6 sm:px-12 my-auto py-2 flex flex-col justify-center">
       
       <!-- Subtle Elite Badge Tag -->
-      <div class="hero-slide-in hero-delay-tag mb-4 sm:mb-5">
+      <div class="hero-slide-in hero-delay-tag mb-3 sm:mb-4">
         <span class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-mono tracking-widest uppercase text-white/90">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
           Strategic Legal Advisory
         </span>
       </div>
 
-      <h1 class="hero-slide-in hero-delay-title text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-normal leading-[1.04] tracking-tighter text-white max-w-4xl mb-5 sm:mb-7">
+      <!-- Fluid responsive heading: fits 1366x768 and 1920x1080 without overflowing -->
+      <h1 class="hero-slide-in hero-delay-title text-4xl sm:text-5xl md:text-6xl lg:text-[72px] xl:text-[80px] font-normal leading-[1.05] tracking-tighter text-white max-w-3xl lg:max-w-4xl mb-4 sm:mb-6">
         Reimagine What Your Business Can Achieve
       </h1>
 
-      <p class="hero-slide-in hero-delay-p text-neutral-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-xl mb-7 sm:mb-9">
+      <p class="hero-slide-in hero-delay-p text-neutral-300 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-lg mb-6 sm:mb-8">
         We help leaders navigate complexity, solve critical challenges, and build stronger, more resilient organizations for the future.
       </p>
 
       <!-- Buttons: Book a Call (White with arrow) & View Case Studies (Dark bordered) -->
-      <div class="hero-slide-in hero-delay-btns flex flex-wrap items-center gap-4">
+      <div class="hero-slide-in hero-delay-btns flex flex-wrap items-center gap-3.5">
         
-        <a href="#contact" class="hero-btn arrow-icon-btn inline-flex items-center gap-3 bg-white text-[#081014] px-7 py-3.5 rounded-none font-medium text-sm transition-all shadow-md">
+        <a href="#contact" class="hero-btn arrow-icon-btn inline-flex items-center gap-2.5 bg-white text-[#081014] px-6 py-3 rounded-none font-medium text-sm transition-all shadow-md">
           <span>Book a Call</span>
           <svg class="w-4 h-4 arrow-icon-inner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -277,7 +278,7 @@ html_content = """<!DOCTYPE html>
           </svg>
         </a>
 
-        <a href="#case-studies" class="hero-btn inline-flex items-center px-7 py-3.5 rounded-none border border-white/30 bg-black/30 backdrop-blur-md text-white text-sm font-medium hover:bg-white/10 transition-all">
+        <a href="#case-studies" class="hero-btn inline-flex items-center px-6 py-3 rounded-none border border-white/30 bg-black/30 backdrop-blur-md text-white text-sm font-medium hover:bg-white/10 transition-all">
           View Case Studies
         </a>
 
@@ -285,8 +286,8 @@ html_content = """<!DOCTYPE html>
 
     </div>
 
-    <!-- Bottom Ticker / Subbar -->
-    <div class="hero-slide-in hero-delay-btns relative z-10 w-full border-t border-white/10 px-6 sm:px-12 py-3.5 flex items-center justify-between text-xs font-mono text-white/60 shrink-0">
+    <!-- Bottom Ticker / Subbar (always visible at bottom of screen) -->
+    <div class="hero-slide-in hero-delay-btns relative z-10 w-full border-t border-white/10 px-6 sm:px-12 py-3 flex items-center justify-between text-xs font-mono text-white/60 shrink-0">
       <span>Build with intention</span>
       <span class="hidden sm:inline">Scale with confidence</span>
     </div>
