@@ -412,9 +412,9 @@ html_content = """<!DOCTYPE html>
         <div class="reveal-on-scroll delay-150 service-card group cursor-pointer">
           <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
             <img 
-              src="https://framerusercontent.com/images/tD1IQTVk5QSeOmBcFgTJiJC8pPg.jpg" 
+              src="images/service-1.png" 
               alt="Business Strategy" 
-              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
             />
             <!-- Gradient Overlay -->
             <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300"></div>
@@ -444,9 +444,9 @@ html_content = """<!DOCTYPE html>
         <div class="reveal-on-scroll delay-250 service-card group cursor-pointer">
           <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
             <img 
-              src="https://framerusercontent.com/images/Uo4kHKvmrD87exvy5Z2rMEpvts.jpg" 
+              src="images/service-2.png" 
               alt="Advisory Retainers" 
-              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
             />
             <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300"></div>
 
@@ -473,9 +473,9 @@ html_content = """<!DOCTYPE html>
         <div class="reveal-on-scroll delay-350 service-card group cursor-pointer">
           <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
             <img 
-              src="https://framerusercontent.com/images/SmKpJArNfpH0J4YgHNcqsyxuyEA.jpg" 
+              src="images/service-3.png" 
               alt="Operations Optimization" 
-              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-center grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
             />
             <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-300"></div>
 
