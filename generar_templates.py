@@ -17,10 +17,10 @@ def get_head(title, description):
   <title>{title}</title>
   <meta name="description" content="{description}" />
 
-  <!-- Favicon (Isotipo Negro de Alto Contraste) -->
-  <link rel="icon" type="image/png" href="images/favicon-isotipo.png" />
+  <!-- Favicon (Isotipo Negro de Alto Contraste Sin Márgenes) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="images/favicon-isotipo.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
 
   <!-- Google Fonts: Geist & Fragment Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -459,49 +459,58 @@ def build_formula_a_html(is_index=False):
           </p>
         </div>
 
-        <!-- Tarjeta 4 -->
-        <div class="reveal-on-scroll delay-100 p-8 bg-white border border-black/10 flex flex-col justify-between group hover:border-black transition-all">
-          <div>
-            <span class="text-xs font-mono text-neutral-400 block mb-3">04 / RIESGO LABORAL EMPRESARIO</span>
-            <h3 class="text-xl font-medium text-[#081014] mb-3">Contención de Conflictos Laborales Complejos</h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              Gestión de desvinculaciones jerárquicas, acuerdos ante SECLO y mitigación del pasivo contingente en nóminas medianas y grandes.
-            </p>
+        <!-- Tarjeta 4: Riesgo Laboral -->
+        <div class="reveal-on-scroll delay-100 service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img src="images/service-1.png" alt="Riesgo Laboral Empresario" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" />
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-all duration-300"></div>
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span class="text-xs font-mono text-white/70 block mb-1">04 / RIESGO LABORAL EMPRESARIO</span>
+              <h3 class="text-2xl font-medium tracking-tight text-white">Contención de Conflictos Complejos</h3>
+            </div>
           </div>
-          <div class="pt-6 border-t border-black/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-            <span>PREVENCIÓN DE LITIGIOS</span>
-            <span class="group-hover:translate-x-1 transition-transform">→</span>
-          </div>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Gestión de desvinculaciones jerárquicas, acuerdos ante SECLO y mitigación del pasivo contingente en nóminas empresariales.
+          </p>
         </div>
 
-        <!-- Tarjeta 5 -->
-        <div class="reveal-on-scroll delay-150 p-8 bg-white border border-black/10 flex flex-col justify-between group hover:border-black transition-all">
-          <div>
-            <span class="text-xs font-mono text-neutral-400 block mb-3">05 / M&A Y FUSIONES</span>
-            <h3 class="text-xl font-medium text-[#081014] mb-3">Compraventa de Empresas y Due Diligence</h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              Auditoría legal previa, detección de pasivos ocultos, valuación de contingencias y redacción de contratos de cesión accionaria.
-            </p>
+        <!-- Tarjeta 5: M&A y Fusiones -->
+        <div class="reveal-on-scroll delay-150 service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img src="images/service-2.png" alt="Compraventa de Empresas" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" />
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-all duration-300"></div>
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span class="text-xs font-mono text-white/70 block mb-1">05 / M&A Y FUSIONES</span>
+              <h3 class="text-2xl font-medium tracking-tight text-white">Compraventa de Empresas y Due Diligence</h3>
+            </div>
           </div>
-          <div class="pt-6 border-t border-black/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-            <span>TRANSACCIONES SEGURAS</span>
-            <span class="group-hover:translate-x-1 transition-transform">→</span>
-          </div>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Auditoría legal previa, detección de pasivos ocultos, valuación de contingencias y redacción de contratos de cesión accionaria.
+          </p>
         </div>
 
-        <!-- Tarjeta 6 -->
-        <div class="reveal-on-scroll delay-200 p-8 bg-white border border-black/10 flex flex-col justify-between group hover:border-black transition-all">
-          <div>
-            <span class="text-xs font-mono text-neutral-400 block mb-3">06 / DEFENSA TRIBUTARIA</span>
-            <h3 class="text-xl font-medium text-[#081014] mb-3">Litigios Impositivos y Reclamos Fiscales</h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              Impugnación de determinaciones de oficio fiscales, defensas ante tribunales contenciosos y medidas cautelares ante embargos.
-            </p>
+        <!-- Tarjeta 6: Defensa Tributaria -->
+        <div class="reveal-on-scroll delay-200 service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img src="images/service-3.png" alt="Litigios Impositivos" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" />
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-all duration-300"></div>
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span class="text-xs font-mono text-white/70 block mb-1">06 / DEFENSA TRIBUTARIA</span>
+              <h3 class="text-2xl font-medium tracking-tight text-white">Litigios Impositivos y Reclamos Fiscales</h3>
+            </div>
           </div>
-          <div class="pt-6 border-t border-black/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-            <span>RECURSOS CONTENCIOSOS</span>
-            <span class="group-hover:translate-x-1 transition-transform">→</span>
-          </div>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Impugnación de determinaciones de oficio fiscales, defensas ante tribunales contenciosos y medidas cautelares ante embargos.
+          </p>
         </div>
 
       </div>
@@ -992,49 +1001,58 @@ def build_formula_b_html():
           </p>
         </div>
 
-        <!-- Tarjeta 4 -->
-        <div class="reveal-on-scroll delay-100 p-8 bg-white border border-black/10 flex flex-col justify-between group hover:border-black transition-all">
-          <div>
-            <span class="text-xs font-mono text-neutral-400 block mb-3">04 / DIFERENCIAS DE SUELDO</span>
-            <h3 class="text-xl font-medium text-[#081014] mb-3">Te pagan menos de lo que marca tu convenio</h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              Horas extras impagas, categoría laboral inferior a la real o retenciones indebidas en tus haberes.
-            </p>
+        <!-- Tarjeta 4: Diferencias de Sueldo -->
+        <div class="reveal-on-scroll delay-100 service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img src="images/service-1.png" alt="Diferencias de Sueldo" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" />
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-all duration-300"></div>
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span class="text-xs font-mono text-white/70 block mb-1">04 / RECLAMO SALARIAL</span>
+              <h3 class="text-2xl font-medium tracking-tight text-white">Te pagan menos de lo que marca tu convenio</h3>
+            </div>
           </div>
-          <div class="pt-6 border-t border-black/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-            <span>RECLAMO SALARIAL</span>
-            <span class="group-hover:translate-x-1 transition-transform">→</span>
-          </div>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Horas extras impagas, categoría laboral inferior a la real o retenciones indebidas en tus haberes.
+          </p>
         </div>
 
-        <!-- Tarjeta 5 -->
-        <div class="reveal-on-scroll delay-150 p-8 bg-white border border-black/10 flex flex-col justify-between group hover:border-black transition-all">
-          <div>
-            <span class="text-xs font-mono text-neutral-400 block mb-3">05 / TRATO HOSTIL</span>
-            <h3 class="text-xl font-medium text-[#081014] mb-3">Hostigamiento, maltrato o cambio arbitrario de tareas</h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              Cambios de horario o de sucursal para forzarte a renunciar. Te asesoramos para que no pierdas derechos.
-            </p>
+        <!-- Tarjeta 5: Trato Hostil -->
+        <div class="reveal-on-scroll delay-150 service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img src="images/service-2.png" alt="Trato Hostil y Acoso" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" />
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-all duration-300"></div>
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span class="text-xs font-mono text-white/70 block mb-1">05 / PROTECCIÓN CONTRA EL ABUSO</span>
+              <h3 class="text-2xl font-medium tracking-tight text-white">Hostigamiento, maltrato o cambio arbitrario</h3>
+            </div>
           </div>
-          <div class="pt-6 border-t border-black/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-            <span>PROTECCIÓN CONTRA EL ABUSO</span>
-            <span class="group-hover:translate-x-1 transition-transform">→</span>
-          </div>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Cambios de horario o de sucursal para forzarte a renunciar. Te asesoramos para que no pierdas derechos.
+          </p>
         </div>
 
-        <!-- Tarjeta 6 -->
-        <div class="reveal-on-scroll delay-200 p-8 bg-white border border-black/10 flex flex-col justify-between group hover:border-black transition-all">
-          <div>
-            <span class="text-xs font-mono text-neutral-400 block mb-3">06 / DESPIDOS DISCRIMINATORIOS</span>
-            <h3 class="text-xl font-medium text-[#081014] mb-3">Despido por embarazo, matrimonio o enfermedad</h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              Indemnizaciones especiales agravadas que prevé la legislación laboral para tutelar situaciones familiares.
-            </p>
+        <!-- Tarjeta 6: Despidos Discriminatorios -->
+        <div class="reveal-on-scroll delay-200 service-card group cursor-pointer">
+          <div class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-5">
+            <img src="images/service-3.png" alt="Despidos Discriminatorios" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" />
+            <div class="service-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-all duration-300"></div>
+            <div class="absolute top-4 right-4 w-9 h-9 bg-white/90 group-hover:bg-white text-[#081014] flex items-center justify-center card-arrow shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span class="text-xs font-mono text-white/70 block mb-1">06 / INDEMNIZACIÓN AGRAVADA</span>
+              <h3 class="text-2xl font-medium tracking-tight text-white">Despido por embarazo, matrimonio o enfermedad</h3>
+            </div>
           </div>
-          <div class="pt-6 border-t border-black/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-            <span>INDEMNIZACIÓN AGRAVADA</span>
-            <span class="group-hover:translate-x-1 transition-transform">→</span>
-          </div>
+          <p class="text-[#707070] text-sm leading-relaxed">
+            Indemnizaciones especiales agravadas que prevé la legislación laboral para tutelar situaciones familiares.
+          </p>
         </div>
 
       </div>
