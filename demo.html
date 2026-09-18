@@ -945,6 +945,41 @@
           wspMsg: "Hola, tuve un accidente laboral y quiero consultar por mi indemnización."
         },
 
+        transito: {
+          tipo: "legal",
+          badge: "ACCIDENTES DE TRÁNSITO",
+          subbadge: "ROBO DE VEHÍCULOS & SEGUROS",
+          h1: "¿Tuviste un choque o te robaron el vehículo?<br/><span class='text-neutral-300'>Cobrá la máxima indemnización de la aseguradora sin vueltas.</span>",
+          heroP: "Especialistas en reclamos contra compañías de seguros por accidentes de tránsito, lesiones corporales y destrucción o robo total de vehículos. Cobramos solo si vos cobrás.",
+          ticker: "Sin gastos de inicio · Negociación directa con compañías aseguradoras",
+          sec02Tag: "02 / ¿CUÁL ES TU RECLAMO?",
+          sec02H2: "Especialistas en siniestros viales y siniestros automotores.",
+          cards: [
+            { tag: "01 / CHOQUE VEHICULAR", title: "Accidentes de tránsito entre autos, motos o colectivos", desc: "Reclamo extrajudicial y judicial contra la compañía de seguros del responsable por daños materiales." },
+            { tag: "02 / LESIONES & DAÑO FÍSICO", title: "Lesiones, fracturas o incapacidad por el choque", desc: "Peritaje médico independiente para cuantificar secuelas psicofísicas y exigir la indemnización legal íntegra." },
+            { tag: "03 / ROBO DE VEHÍCULO", title: "Robo total de auto o moto y negativa de la aseguradora", desc: "Intimación legal a la compañía de seguros por mora injustificada o liquidación a valor de póliza desactualizado." },
+            { tag: "04 / PEATÓN O CICLISTA", title: "Atropellos a peatones o ciclistas en la vía pública", desc: "Protección prioritaria a la víctima frente al conductor y aseguradora. Cobertura médica y resarcimiento." },
+            { tag: "05 / DESTRUCCIÓN TOTAL", title: "Declaración de destrucción total del vehículo", desc: "Defensa ante peritajes malintencionados que pretenden reparar un vehículo no apto en vez de pagar el valor total." },
+            { tag: "06 / PAGO DE INDEMNIZACIÓN", title: "Cobro del resarcimiento directo en tu cuenta bancaria", desc: "Homologación rápida de acuerdos en mediación o juicio para evitar la licuación inflacionaria del cobro." }
+          ],
+          metodoTitulo: "03 / CÓMO RECLAMAMOS",
+          metodoH2: "Presión legal directa sobre la aseguradora para cobrar lo justo.",
+          paso1T: "Nos enviás los datos del siniestro",
+          paso1P: "Fotos del choque, denuncia policial o del seguro, datos del tercero y presupuesto del taller si lo tenés.",
+          paso3T: "Acuerdo o Juicio con Honorarios a Resultado",
+          paso3P: "Negociamos la indemnización más alta. Nuestros honorarios se abonan únicamente cuando recibís tu pago.",
+          autoridadH2: "Conocemos todas las maniobras que usan las aseguradoras para pagar de menos.",
+          autoridadP1: "las compañías de seguros buscan demorar y ofrecer montos muy inferiores a los daños reales. Nuestro trabajo es obligarlas a responder con la indemnización que la ley manda.",
+          autoridadRol: "Especialistas en Accidentes de Tránsito & Seguros",
+          autoridadBadge: "SINIESTROS VIALES",
+          stats: [ { v: "+12", l: "Años en Derecho de Daños" }, { v: "+2.800", l: "Siniestros Resueltos" }, { v: "0$", l: "Costo Inicial" }, { v: "100%", l: "Cobro a Resultado" } ],
+          cierreTag: "07 / HACÉ TU CONSULTA",
+          cierreH2: "No dejes pasar los plazos de denuncia del siniestro.",
+          cierreP: "Escribinos ahora con los datos del choque o robo y evaluamos la viabilidad y monto de tu reclamo.",
+          ctaBtn: "Consultar por Accidente",
+          wspMsg: "Hola, me comunico para consultar por un reclamo por accidente de tránsito / siniestro vehicular."
+        },
+
         // === NICHOS MÉDICOS / DOCTORES / SALUD ===
         medico: {
           tipo: "medico",
@@ -1129,6 +1164,12 @@
       const paramWsp = params.get('wsp') || params.get('telefono') || '5491100000000';
       const paramZona = params.get('zona') || params.get('ciudad') || 'Tribunales, CABA';
       const paramDireccion = params.get('direccion') || (paramZona + ' - Atención presencial');
+      const paramTitular = params.get('titular') || params.get('abogado') || params.get('medico') || params.get('doctor');
+
+      const nichoData = NICHOS[paramNicho] || NICHOS.laboral;
+      const nombreFinal = paramEstudio || (nichoData.tipo === 'medico' ? 'Centro Médico Especializado' : 'elyte®');
+      const titularFinal = paramTitular || (nichoData.tipo === 'medico' ? 'Equipo Médico Especialista' : ('Equipo de ' + nombreFinal));
+      const cleanWsp = paramWsp.replace(/[^0-9]/g, '');
 
       // Actualizar SEO Local Schema.org
       const schemaEl = document.getElementById('schema-seo-target');
@@ -1161,11 +1202,6 @@
       if (mapEl && paramZona) {
         mapEl.src = `https://maps.google.com/maps?q=${encodeURIComponent(nombreFinal + ' ' + paramZona + ' Buenos Aires')}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
       }
-      const paramTitular = params.get('titular') || params.get('abogado') || params.get('medico') || params.get('doctor');
-
-      const nichoData = NICHOS[paramNicho] || NICHOS.laboral;
-      const nombreFinal = paramEstudio || (nichoData.tipo === 'medico' ? 'Centro Médico Especializado' : 'elyte®');
-      const titularFinal = paramTitular || (nichoData.tipo === 'medico' ? 'Equipo Médico Especialista' : ('Equipo de ' + nombreFinal));
 
       // 3. TÍTULO Y MARCA EN NAVEGADOR
       document.title = `${nombreFinal} — ${nichoData.badge}`;
