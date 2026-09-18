@@ -254,7 +254,7 @@
       <div class="flex items-center gap-4">
         <a href="https://wa.me/5491100000000?text=Hola,%20tengo%20un%20problema%20en%20mi%20trabajo%20y%20necesito%20asesoramiento" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 backdrop-blur-md text-emerald-300 text-[13px] font-medium transition-all">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Consulta Gratis por WhatsApp
+          <span class="navbar-btn-text">Consulta por WhatsApp</span>
         </a>
       </div>
     </header>
@@ -338,8 +338,8 @@
     <div class="max-w-[1240px] mx-auto">
       
       <div class="mb-12">
-        <span class="reveal-on-scroll tag-mono mb-3 block section-beacon">02 / ¿CUÁL ES TU CASO?</span>
-        <h2 class="reveal-on-scroll delay-100 text-2xl sm:text-[28px] md:text-[32px] font-medium tracking-tight text-[#081014] leading-[1.25] max-w-2xl">
+        <span class="sec02-tag-target reveal-on-scroll tag-mono mb-3 block section-beacon">02 / ¿CUÁL ES TU CASO?</span>
+        <h2 class="sec02-h2-target reveal-on-scroll delay-100 text-2xl sm:text-[28px] md:text-[32px] font-medium tracking-tight text-[#081014] leading-[1.25] max-w-2xl">
           Elegí la situación en la que te encontrás hoy.
         </h2>
       </div>
@@ -592,23 +592,23 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         
         <div class="reveal-on-scroll delay-100 border-l border-white/20 pl-6">
-          <span class="text-3xl sm:text-4xl font-normal tracking-tighter text-white block mb-1 font-mono">+15</span>
-          <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Años de Experiencia</span>
+          <span class="stat1-val text-3xl sm:text-4xl font-normal tracking-tighter text-white block mb-1 font-mono">+15</span>
+          <span class="stat1-lbl text-xs font-mono uppercase tracking-wider text-neutral-400">Años de Experiencia</span>
         </div>
 
         <div class="reveal-on-scroll delay-150 border-l border-white/20 pl-6">
-          <span class="text-3xl sm:text-4xl font-normal tracking-tighter text-white block mb-1 font-mono">+3.200</span>
-          <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Trabajadores Asesorados</span>
+          <span class="stat2-val text-3xl sm:text-4xl font-normal tracking-tighter text-white block mb-1 font-mono">+3.200</span>
+          <span class="stat2-lbl text-xs font-mono uppercase tracking-wider text-neutral-400">Pacientes Atendidos</span>
         </div>
 
         <div class="reveal-on-scroll delay-200 border-l border-white/20 pl-6">
-          <span class="text-3xl sm:text-4xl font-normal tracking-tighter text-white block mb-1 font-mono">0$</span>
-          <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Costo Inicial</span>
+          <span class="stat3-val text-3xl sm:text-4xl font-normal tracking-tighter text-white block mb-1 font-mono">100%</span>
+          <span class="stat3-lbl text-xs font-mono uppercase tracking-wider text-neutral-400">Atención Personalizada</span>
         </div>
 
         <div class="reveal-on-scroll delay-250 border-l border-white/20 pl-6">
-          <span class="text-3xl sm:text-4xl font-normal tracking-tighter text-white block mb-1 font-mono">100%</span>
-          <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Cobro a Resultado</span>
+          <span class="stat4-val text-3xl sm:text-4xl font-normal tracking-tighter text-white block mb-1 font-mono">1º Nivel</span>
+          <span class="stat4-lbl text-xs font-mono uppercase tracking-wider text-neutral-400">Tecnología Médica</span>
         </div>
 
       </div>
@@ -679,12 +679,12 @@
   <section id="contacto" class="bg-[#081014] text-white py-20 sm:py-28 px-6 sm:px-12 relative overflow-hidden border-t border-white/10">
     <div class="max-w-[800px] mx-auto text-center relative z-10">
       
-      <span class="reveal-on-scroll tag-mono-light mb-3 inline-block section-beacon">07 / RECLAMÁ AHORA</span>
-      <h2 class="reveal-on-scroll delay-100 text-2xl sm:text-[28px] md:text-[32px] font-medium tracking-tight text-white leading-[1.25] mb-4">
-        Los plazos legales corren desde el primer día.
+      <span class="cierre-tag-target reveal-on-scroll tag-mono-light mb-3 inline-block section-beacon">07 / CONTACTO DIRECTO</span>
+      <h2 class="cierre-h2-target reveal-on-scroll delay-100 text-2xl sm:text-[28px] md:text-[32px] font-medium tracking-tight text-white leading-[1.25] mb-4">
+        Tu salud y bienestar en manos de especialistas.
       </h2>
-      <p class="reveal-on-scroll delay-150 text-neutral-400 text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-8">
-        Si recibiste una carta documento tenés un plazo breve para responderla válidamente. Escribinos ahora mismo.
+      <p class="cierre-p-target reveal-on-scroll delay-150 text-neutral-400 text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-8">
+        Agendá tu consulta hoy mismo por WhatsApp y recibí atención personalizada sin esperas.
       </p>
 
       <!-- Botón WhatsApp Destacado -->
@@ -782,14 +782,26 @@
   <!-- ==================== PROSPECTION ENGINE: URL PARAMS DYNAMIC INJECTOR ==================== -->
   <script>
     (function() {
-      // 1. Nichos preconfigurados con copy ganador comprobado
+      // 1. DICCIONARIO MAESTRO DE NICHOS (LEGAL + MÉDICO / DOCTORES / SALUD)
       const NICHOS = {
+        // === NICHOS LEGALES ===
         laboral: {
+          tipo: "legal",
           badge: "DEFENSA LABORAL",
           subbadge: "COBRAMOS SOLO SI GANÁS",
           h1: "¿Problemas en tu trabajo?<br/><span class='text-neutral-300'>Te ayudamos a reclamar lo que te corresponde.</span>",
           heroP: "Despidos, trabajo en negro, diferencias salariales y ART. Abogados especialistas en defender trabajadores. Primera consulta 100% gratuita y en el día.",
           ticker: "No tenés que pagar nada para empezar · Honorarios a resultado",
+          sec02Tag: "02 / ¿CUÁL ES TU CASO?",
+          sec02H2: "Elegí la situación en la que te encontrás hoy.",
+          cards: [
+            { tag: "01 / INDEMNIZACIÓN COMPLETA", title: "Te despidieron o te llegó una carta documento", desc: "Calculamos tu liquidación real de inmediato. No firmes nada sin consultar antes con un especialista." },
+            { tag: "02 / MULTAS A TU FAVOR", title: "Trabajás 'en negro' o cobrás parte en mano", desc: "La ley sanciona el trabajo no registrado con multas e indemnizaciones acumuladas a tu favor." },
+            { tag: "03 / COBERTURA MÉDICA & DINERO", title: "Tuviste un accidente de trabajo o en el trayecto", desc: "Exigimos la indemnización correspondiente a la ART por incapacidad física o secuelas de salud." },
+            { tag: "04 / RECLAMO SALARIAL", title: "Te pagan menos de lo que marca tu convenio", desc: "Horas extras impagas, categoría laboral inferior a la real o retenciones indebidas en tus haberes." },
+            { tag: "05 / PROTECCIÓN CONTRA EL ABUSO", title: "Hostigamiento, maltrato o cambio arbitrario", desc: "Cambios de horario o de sucursal para forzarte a renunciar. Te asesoramos para que no pierdas derechos." },
+            { tag: "06 / INDEMNIZACIÓN AGRAVADA", title: "Despido por embarazo, matrimonio o enfermedad", desc: "Indemnizaciones especiales agravadas que prevé la legislación laboral para tutelar situaciones familiares." }
+          ],
           metodoTitulo: "03 / CÓMO ES EL TRÁMITE",
           metodoH2: "Iniciar tu reclamo es simple, rápido y sin costos iniciales.",
           paso1T: "Nos escribís por WhatsApp",
@@ -797,18 +809,34 @@
           paso3T: "Sin costos por adelantado",
           paso3P: "Solo cobramos si vos cobrás una indemnización favorable. No ponés dinero de tu bolsillo.",
           autoridadH2: "Sabemos cómo negocian las empresas y sus abogados defensores.",
-          autoridadP1: "Defendemos a trabajadores con una premisa clara: que nadie se quede sin respaldo frente al poder de una empresa o aseguradora.",
-          autoridadP2: "Con años de experiencia en conciliaciones y litigios, nuestro compromiso es que cobres el monto justo en el menor tiempo posible.",
+          autoridadP1: "defendemos a trabajadores con una premisa clara: que nadie se quede sin respaldo frente al poder de una empresa o aseguradora.",
           autoridadRol: "Especialistas en Derecho del Trabajo",
           autoridadBadge: "LITIGIOS & SECLO",
+          stats: [ { v: "+15", l: "Años de Experiencia" }, { v: "+3.200", l: "Trabajadores Asesorados" }, { v: "0$", l: "Costo Inicial" }, { v: "100%", l: "Cobro a Resultado" } ],
+          cierreTag: "07 / RECLAMÁ AHORA",
+          cierreH2: "Los plazos legales corren desde el primer día.",
+          cierreP: "Si recibiste una carta documento tenés un plazo breve para responderla válidamente. Escribinos ahora mismo.",
+          ctaBtn: "Consulta Gratis por WhatsApp",
           wspMsg: "Hola, vi su web y necesito hacer una consulta laboral."
         },
+
         penal: {
+          tipo: "legal",
           badge: "DEFENSA PENAL 24/7",
           subbadge: "INTERVENCIÓN INMEDIATA",
           h1: "¿Tenés una urgencia penal?<br/><span class='text-neutral-300'>Estrategias de defensa penal técnica las 24 horas.</span>",
           heroP: "Detenciones, comisarías, allanamientos, excarcelaciones y defensas en juicio oral. Asistencia penal urgente en menos de 2 horas.",
           ticker: "Guardia penal activa las 24 horas · Absoluta confidencialidad",
+          sec02Tag: "02 / ÁREAS DE INTERVENCIÓN",
+          sec02H2: "Defensa técnica inmediata ante cualquier fuero penal.",
+          cards: [
+            { tag: "01 / ASISTENCIA EN COMISARÍA", title: "Detenciones inmediatas y primeras declaraciones", desc: "Intervención presencial urgente para resguardar garantías constitucionales y evitar autoincriminaciones." },
+            { tag: "02 / EXCARCELACIONES", title: "Pedidos de libertad y cese de prisión preventiva", desc: "Planteos técnicos de excarcelación y morigeración de medidas de coerción ante el juez de garantías." },
+            { tag: "03 / ALLANAMIENTOS", title: "Defensa en allanamientos y secuestro de bienes", desc: "Control de legalidad de órdenes judiciales, actas de procedimiento y protección de derechos." },
+            { tag: "04 / JUICIO ORAL", title: "Litigación estratégica en juicios orales complejos", desc: "Desarrollo de teoría del caso, examen de testigos y alegatos de clausura orientados a la absolución." },
+            { tag: "05 / DELITOS ECONÓMICOS", title: "Defensa en causas de estafas, tributario y lavado", desc: "Asesoramiento penal empresario, querellas criminales y mitigación de responsabilidad penal corporativa." },
+            { tag: "06 / QUERELLAS Y VÍCTIMAS", title: "Representación activa de víctimas y particulares damnificados", desc: "Impulso de la investigación penal preparatoria para lograr condenas efectivas y reparación integral." }
+          ],
           metodoTitulo: "03 / PROTOCOLO URGENTE",
           metodoH2: "Actuamos desde el primer minuto para resguardar tu libertad.",
           paso1T: "Llamado o WhatsApp Inmediato",
@@ -816,18 +844,34 @@
           paso3T: "Intervención en Comisaría / Juzgado",
           paso3P: "Nos presentamos inmediatamente para tomar conocimiento de la causa y solicitar la libertad.",
           autoridadH2: "Estrategias de litigación penal diseñadas para proteger tu libertad y reputación.",
-          autoridadP1: "En materia penal el tiempo es determinante. Intervenimos con rapidez, solvencia técnica y reserva absoluta.",
-          autoridadP2: "Representación integral tanto en defensa técnica del imputado como en patrocinio de víctimas particulares.",
+          autoridadP1: "en materia penal el tiempo es determinante. Intervenimos con rapidez, solvencia técnica y reserva absoluta.",
           autoridadRol: "Especialistas en Derecho Penal & Litigios",
           autoridadBadge: "DEFENSA TÉCNICA 24HS",
+          stats: [ { v: "24/7", l: "Guardia Urgente Activa" }, { v: "< 2hs", l: "Llegada a Comisaría" }, { v: "+18", l: "Años en Fuero Penal" }, { v: "100%", l: "Reserva & Secreto Profesional" } ],
+          cierreTag: "07 / GUARDIA 24 HORAS",
+          cierreH2: "Cada minuto cuenta en una detención o imputación.",
+          cierreP: "Comunicate directamente con la guardia penal activa. Respuesta inmediata los 365 días del año.",
+          ctaBtn: "Llamar a Guardia Penal",
           wspMsg: "Hola, necesito asistencia penal urgente."
         },
+
         art: {
+          tipo: "legal",
           badge: "ACCIDENTES Y ART",
           subbadge: "MÁXIMA INDEMNIZACIÓN",
           h1: "¿Tuviste un accidente de trabajo?<br/><span class='text-neutral-300'>Reclamá la indemnización real que la ART te oculta.</span>",
           heroP: "Accidentes en el lugar de trabajo o en el trayecto (in itinere), enfermedades profesionales y secuelas físicas. Consulta y peritaje médico sin costo.",
           ticker: "Sin gastos por adelantado · Peritaje médico gratuito",
+          sec02Tag: "02 / TIPOS DE ACCIDENTES",
+          sec02H2: "Casos frecuentes donde exigimos indemnización total.",
+          cards: [
+            { tag: "01 / ACCIDENTE DE TRAYECTO", title: "Accidentes in itinere (yendo o volviendo del trabajo)", desc: "La ART está obligada a cubrir traslados, atención médica y la indemnización monetaria por secuelas." },
+            { tag: "02 / ACCIDENTE EN PLANTA", title: "Caídas, golpes o atrapamientos en el trabajo", desc: "Exigimos tratamiento completo y demandamos indemnización por cualquier disminución funcional." },
+            { tag: "03 / ENFERMEDAD LABORAL", title: "Hernias de disco, várices, túnel carpiano o hipoacusia", desc: "Enfermedades generadas por la tarea repetitiva o esfuerzo continuado que la ART suele rechazar ilegalmente." },
+            { tag: "04 / ALTA PREMATURA", title: "La ART te dio el alta pero seguís con dolor", desc: "Impugnamos el alta médica de inmediato ante la Comisión Médica y exigimos reapertura de tratamiento." },
+            { tag: "05 / PERITAJE INDEPENDIENTE", title: "Determinación de incapacidad con médicos propios", desc: "Nuestros peritos médicos evalúan tus secuelas reales para que no te liquiden un porcentaje menor." },
+            { tag: "06 / PAGO DE INDEMNIZACIÓN", title: "Cobro del capital más intereses acumulados", desc: "Gestionamos el depósito judicial directo a tu cuenta bancaria sin demoras ni retenciones ilegítimas." }
+          ],
           metodoTitulo: "03 / CÓMO COBRAR LA ART",
           metodoH2: "Determinamos tu porcentaje de incapacidad real para cobrar el máximo legal.",
           paso1T: "Nos contás el accidente",
@@ -835,66 +879,208 @@
           paso3T: "Peritaje Médico Propio",
           paso3P: "Nuestros peritos médicos determinan tu incapacidad real sin que pagues un solo peso.",
           autoridadH2: "Exigimos a las aseguradoras de riesgo lo que legalmente te pertenece.",
-          autoridadP1: "Las ART suelen dar altas prematuras y ofrecer montos muy inferiores a los que marca la ley. Nosotros revertimos esa situación.",
-          autoridadP2: "Acompañamos cada caso ante comisiones médicas jurisdiccionales y tribunales laborales.",
+          autoridadP1: "las ART suelen dar altas prematuras y ofrecer montos muy inferiores a los que marca la ley. Nosotros revertimos esa situación.",
           autoridadRol: "Especialistas en Accidentes de Trabajo & ART",
           autoridadBadge: "RECLAMOS ART",
+          stats: [ { v: "+4.500", l: "Casos ART Cobrados" }, { v: "0$", l: "Costo de Peritaje" }, { v: "+15", l: "Años Litigando contra ARTs" }, { v: "100%", l: "Cobro a Resultado" } ],
+          cierreTag: "07 / INICIÁ TU RECLAMO",
+          cierreH2: "No te quedes con la primera oferta que te haga la ART.",
+          cierreP: "Escribinos hoy con el alta médica o número de siniestro y calculamos el monto que te corresponde.",
+          ctaBtn: "Calcular Indemnización ART",
           wspMsg: "Hola, tuve un accidente laboral y quiero consultar por mi indemnización."
         },
-        familia: {
-          badge: "SUCESIONES Y FAMILIA",
-          subbadge: "HONORARIOS EN CUOTAS",
-          h1: "¿Necesitás tramitar una sucesión o divorcio?<br/><span class='text-neutral-300'>Soluciones claras, ágiles y sin conflictos innecesarios.</span>",
-          heroP: "Declaratorias de herederos, partición de bienes, divorcios exprés y convenios de alimentos. Previsibilidad y honorarios en cuotas.",
-          ticker: "Trámites 100% online y presenciales · Plan de pagos a tu medida",
-          metodoTitulo: "03 / TRÁMITE SENCILLO",
-          metodoH2: "Aceleramos los tiempos judiciales con un plan de etapas transparente.",
-          paso1T: "Consulta inicial de documentación",
-          paso1P: "Revisamos partidas, escrituras y acuerdos para definir la vía legal más rápida.",
-          paso3T: "Honorarios en Cuotas Claras",
-          paso3P: "Sabés exactamente cuánto vas a abonar desde el día 1, sin sorpresas ni gastos ocultos.",
-          autoridadH2: "Acompañamiento jurídico humano con rigor técnico en derecho civil y de familia.",
-          autoridadP1: "Sabemos que las cuestiones patrimoniales familiares requieren sensibilidad, mediación y rapidez para evitar desgastes.",
-          autoridadP2: "Planificamos la adjudicación de bienes y acuerdos extrajudiciales priorizando la paz familiar.",
-          autoridadRol: "Especialistas en Sucesiones & Familia",
-          autoridadBadge: "DERECHO SUCESORIO & CIVIL",
-          wspMsg: "Hola, quisiera consultar por una sucesión / trámite familiar."
+
+        // === NICHOS MÉDICOS / DOCTORES / SALUD ===
+        medico: {
+          tipo: "medico",
+          badge: "CONSULTA MÉDICA PRIVADA",
+          subbadge: "TURNOS SIN ESPERAS",
+          h1: "Atención médica personalizada.<br/><span class='text-neutral-300'>Cuidamos tu salud con diagnóstico preciso y calidez humana.</span>",
+          heroP: "Consultorio médico de alta complejidad. Turnos ágiles, seguimiento clínico cercano y derivaciones directas a estudios diagnósticos.",
+          ticker: "Atención presencial y videoconsulta · Respaldo profesional y equipamiento moderno",
+          sec02Tag: "02 / ESPECIALIDADES & SERVICIOS",
+          sec02H2: "Tratamientos y consultas médicas frecuentes.",
+          cards: [
+            { tag: "01 / DIAGNÓSTICO INTEGRAL", title: "Chequeo Clínico y Examen Preventivo Anual", desc: "Evaluación completa de salud, análisis de laboratorio, riesgo cardiovascular y pautas de prevención." },
+            { tag: "02 / TRATAMIENTOS CRÓNICOS", title: "Control de Hipertensión, Diabetes y Tiroides", desc: "Planes terapéuticos personalizados con seguimiento evolutivo para mantener tu calidad de vida." },
+            { tag: "03 / TELEMEDICINA", title: "Videoconsulta Médica Online Inmediata", desc: "Recetas electrónicas, lectura de estudios y atención desde tu casa con la misma rigurosidad clínica." },
+            { tag: "04 / ESTUDIOS DIAGNÓSTICOS", title: "Derivación e Interpretación Rápida de Estudios", desc: "Análisis de laboratorio, ecografías, tomografías y resonancias con diagnóstico explicativo sin tecnicismos." },
+            { tag: "05 / APTOS FÍSICOS", title: "Aptos Médicos Laborales, Deportivos y Escolares", desc: "Evaluación cardiovascular y física completa con entrega de certificado en el día." },
+            { tag: "06 / SEGUNDA OPINIÓN", title: "Segunda Opinión Médica en Casos Complejos", desc: "Revisión exhaustiva de diagnósticos previos y alternativas terapéuticas para tu tranquilidad familiar." }
+          ],
+          metodoTitulo: "03 / NUESTRO PROTOCOLO DE ATENCIÓN",
+          metodoH2: "Atención médica moderna: puntual, empática y sin trámites innecesarios.",
+          paso1T: "Solicitás tu turno por WhatsApp",
+          paso1P: "Elegís día y horario según tu comodidad, con confirmación y recordatorio automático.",
+          paso3T: "Diagnóstico Claro y Plan Terapéutico",
+          paso3P: "Te explicamos detalladamente tu cuadro, sin apuros, con indicaciones y recetas digitales al instante.",
+          autoridadH2: "Medicina basada en la evidencia con un trato verdaderamente humano.",
+          autoridadP1: "creemos que la buena medicina empieza por escuchar. Nos tomamos el tiempo necesario con cada paciente para brindar un diagnóstico certero.",
+          autoridadRol: "Médico Especialista · Matrícula Nacional & Provincial",
+          autoridadBadge: "MEDICINA PRIVADA",
+          stats: [ { v: "+15", l: "Años de Trayectoria Médica" }, { v: "+8.000", l: "Pacientes Atendidos" }, { v: "0 min", l: "Demoras en Sala de Espera" }, { v: "4.9 ★", l: "Calificación de Pacientes" } ],
+          cierreTag: "07 / AGENDÁ TU CITA",
+          cierreH2: "No postergues tu salud ni la de tu familia.",
+          cierreP: "Escribinos ahora por WhatsApp para coordinar tu consulta presencial o virtual en los próximos días.",
+          ctaBtn: "Pedir Turno por WhatsApp",
+          wspMsg: "Hola Dr., quisiera consultar por turnos disponibles para una consulta médica."
         },
-        societario: {
-          badge: "DERECHO CORPORATIVO & PYMES",
-          subbadge: "RESPUESTA EN < 24 HORAS",
-          h1: "¿Conflictos entre socios o blindaje?<br/><span class='text-neutral-300'>Protegemos el patrimonio y la continuidad de tu empresa.</span>",
-          heroP: "Acuerdos de socios, reestructuraciones societarias, contratos comerciales y contención de riesgos patrimoniales. Asesoramiento confidencial.",
-          ticker: "Primera evaluación técnica en menos de 24hs · Confidencialidad bajo NDA",
-          metodoTitulo: "03 / BLINDAJE EMPRESARIAL",
-          metodoH2: "Metodología corporativa para prevenir contingencias y litigios destructivos.",
-          paso1T: "Diagnóstico inicial confidencial",
-          paso1P: "Analizamos estatutos, asambleas y estados patrimoniales bajo estricto acuerdo de confidencialidad.",
-          paso3T: "Plan de Acción Estratégico",
-          paso3P: "Entregamos un dictamen claro con opciones de mitigación, negociación o reestructuración.",
-          autoridadH2: "Solvencia jurídica pensada para directores, socios y dueños de empresas.",
-          autoridadP1: "Entendemos la lógica del negocio: no buscamos trabar operaciones con burocracia, sino blindar el patrimonio de manera eficiente.",
-          autoridadP2: "Acompañamos a PyMEs familiares y sociedades en rondas de negociación, fusiones y disputas de directorio.",
-          autoridadRol: "Especialistas en Derecho Corporativo",
-          autoridadBadge: "SOCIETARIO & M&A",
-          wspMsg: "Hola, me contacto para una consulta corporativa para mi empresa."
+
+        odontologia: {
+          tipo: "medico",
+          badge: "ODONTOLOGÍA AVANZADA",
+          subbadge: "ATENCIÓN SIN DOLOR",
+          h1: "Volvé a sonreír con confianza.<br/><span class='text-neutral-300'>Odontología estética, implantes y ortodoncia invisible.</span>",
+          heroP: "Tecnología digital de vanguardia, odontología mínimamente invasiva y financiación en cuotas. Diagnóstico dental y escaneo digital en tu primera visita.",
+          ticker: "Tecnología láser y escáner intraoral 3D · Planes en cuotas sin interés",
+          sec02Tag: "02 / TRATAMIENTOS ODONTOLÓGICOS",
+          sec02H2: "¿Qué cambio querés lograr en tu sonrisa hoy?",
+          cards: [
+            { tag: "01 / IMPLANTES DENTALES", title: "Implantes Dentales y Prótesis Fijas", desc: "Recuperá piezas dentales de forma definitiva con tecnología de carga inmediata y estética natural." },
+            { tag: "02 / ORTODONCIA INVISIBLE", title: "Alineadores Transparentes (Invisalign)", desc: "Alineá tus dientes sin brackets metálicos, de forma cómoda, removible y 100% estética." },
+            { tag: "03 / ESTÉTICA DENTAL", title: "Carillas Dentales y Diseño de Sonrisa", desc: "Carillas de porcelana o resina para corregir forma, color y espacio dental con precisión milimétrica." },
+            { tag: "04 / BLANQUEAMIENTO", title: "Blanqueamiento Dental Láser en 1 Sesión", desc: "Dientes más blancos y brillantes sin dañar el esmalte, con tecnología clínica de activación por luz." },
+            { tag: "05 / ODONTOLOGÍA GENERAL", title: "Limpiezas Profundas, Caries y Endodoncia", desc: "Salud gingival, restauraciones estéticas y tratamientos de conducto indoloros con microscopía." },
+            { tag: "06 / URGENCIAS DENTALES", title: "Atención de Dolor Dental y Fracturas en el Día", desc: "Guardia y turnos prioritarios para aliviar el dolor de muelas y resolver roturas accidentales de inmediato." }
+          ],
+          metodoTitulo: "03 / CÓMO TRANSFORMAMOS TU SONRISA",
+          metodoH2: "Un plan paso a paso, predecible y diseñado digitalmente antes de empezar.",
+          paso1T: "Agendás tu evaluación inicial",
+          paso1P: "Coordinamos tu primera visita para un chequeo exhaustivo con fotos y escaneo digital.",
+          paso3T: "Simulación Digital y Plan en Cuotas",
+          paso3P: "Ves cómo va a quedar tu sonrisa antes del tratamiento y accedés a planes de pago flexibles y accesibles.",
+          autoridadH2: "Experiencia, equipamiento de última generación y pasión por la estética dental.",
+          autoridadP1: "sabemos que ir al dentista puede generar ansiedad. Por eso creamos una experiencia relajada, con anestesia computarizada y cero dolor.",
+          autoridadRol: "Especialista en Rehabilitación Oral & Estética",
+          autoridadBadge: "CLÍNICA ODONTOLÓGICA",
+          stats: [ { v: "+10", l: "Años Diseñando Sonrisas" }, { v: "+2.500", l: "Implantes Colocados" }, { v: "100%", l: "Garantía de Satisfacción" }, { v: "Cuotas", l: "Financiación a Medida" } ],
+          cierreTag: "07 / TU PRIMERA VISITA",
+          cierreH2: "El primer paso hacia la sonrisa que siempre quisiste.",
+          cierreP: "Comunicate ahora por WhatsApp para agendar tu consulta diagnóstica con escaneo digital incluido.",
+          ctaBtn: "Agendar Turno Odontológico",
+          wspMsg: "Hola, quisiera consultar por turnos para un diagnóstico dental."
+        },
+
+        estetica: {
+          tipo: "medico",
+          badge: "MEDICINA ESTÉTICA Y ANTIAGE",
+          subbadge: "RESULTADOS NATURALES",
+          h1: "Tu mejor versión, con naturalidad.<br/><span class='text-neutral-300'>Procedimientos médicos seguros y rejuvenecimiento facial.</span>",
+          heroP: "Bótox, ácido hialurónico, bioestimuladores de colágeno y armonización facial realizados exclusivamente por médicos especialistas certificados.",
+          ticker: "Productos premium aprobados por ANMAT · Enfoque estético armónico y sutil",
+          sec02Tag: "02 / TRATAMIENTOS DESTACADOS",
+          sec02H2: "Procedimientos médicos para rejuvenecer y realzar tus rasgos.",
+          cards: [
+            { tag: "01 / LÍNEAS DE EXPRESIÓN", title: "Toxina Botulínica (Bótox Facial)", desc: "Suaviza arrugas en frente, entrecejo y patas de gallo manteniendo tu expresividad natural sin rigidez." },
+            { tag: "02 / VOLUMEN Y PERFILADO", title: "Relleno de Labios y Ácido Hialurónico", desc: "Hidratación profunda, definición de contorno y volumen labial armonioso con resultados inmediatos." },
+            { tag: "03 / TENSADO FACIAL", title: "Bioestimuladores de Colágeno (Radiesse / Sculptra)", desc: "Recuperá la firmeza y elasticidad de la piel estimulando tu propia producción natural de colágeno." },
+            { tag: "04 / DEFINICIÓN FACIAL", title: "Rinomodelación sin Cirugía & Mentón", desc: "Corrección sutil del dorso y punta nasal en 30 minutos sin quirófano ni tiempo de recuperación." },
+            { tag: "05 / CALIDAD DE PIEL", title: "Peelings Médicos y Mesoterapia Facial", desc: "Luminosidad, reducción de manchas, poros dilatados y renovación celular para una piel radiante." },
+            { tag: "06 / CONTORNO CORPORAL", title: "Tratamientos para Adiposidad y Celulitis", desc: "Enzimas recombinantes y aparatología médica para modelar zonas rebeldes de forma no invasiva." }
+          ],
+          metodoTitulo: "03 / PROTOCOLO MÉDICO ESTÉTICO",
+          metodoH2: "Evaluación anatómica individualizada para resultados armónicos y seguros.",
+          paso1T: "Consulta de diagnóstico facial",
+          paso1P: "Analizamos tu estructura facial, tipo de piel y expectativas para diseñar tu protocolo personalizado.",
+          paso3T: "Aplicación Médica Segura",
+          paso3P: "Procedimientos rápidos de consultorio con anestesia tópica, insumos descartables y productos 100% trazables.",
+          autoridadH2: "Medicina estética de excelencia: realzar tu belleza sin cambiar tus rasgos.",
+          autoridadP1: "nuestra filosofía es la naturalidad. Rechazamos los excesos y priorizamos la salud de tu piel con criterio médico riguroso.",
+          autoridadRol: "Médica Especialista en Medicina Estética",
+          autoridadBadge: "MEDICINA ESTÉTICA CERTIFICADA",
+          stats: [ { v: "+8", l: "Años de Especialización" }, { v: "+3.800", l: "Tratamientos Realizados" }, { v: "100%", l: "Productos ANMAT Certificados" }, { v: "Natural", l: "Resultados Armónicos" } ],
+          cierreTag: "07 / TU MOMENTO",
+          cierreH2: "Comenzá hoy tu plan de rejuvenecimiento y cuidado de la piel.",
+          cierreP: "Escribinos por WhatsApp para reservar tu cita de diagnóstico médico personalizado.",
+          ctaBtn: "Pedir Cita de Diagnóstico",
+          wspMsg: "Hola Dra., quisiera coordinar una consulta de diagnóstico para tratamientos faciales/estéticos."
+        },
+
+        traumatologia: {
+          tipo: "medico",
+          badge: "TRAUMATOLOGÍA Y ARTICULACIONES",
+          subbadge: "RECUPERACIÓN RÁPIDA",
+          h1: "Volvé a moverte sin dolor.<br/><span class='text-neutral-300'>Traumatología de avanzada, columna y medicina deportiva.</span>",
+          heroP: "Diagnóstico y tratamiento de lesiones articulares, lumbalgias, tendinitis y fracturas. Tratamientos biológicos regenerativos y cirugía mínimamente invasiva.",
+          ticker: "Especialistas en rodilla, columna y hombro · Rehabilitación integral",
+          sec02Tag: "02 / PATOLOGÍAS Y TRATAMIENTOS",
+          sec02H2: "Aliviamos el dolor y recuperamos tu movilidad articular.",
+          cards: [
+            { tag: "01 / RODILLA Y MENISCOS", title: "Lesiones de Meniscos y Ligamentos Cruzados", desc: "Tratamiento artroscópico mínimamente invasivo y terapias regenerativas para volver al deporte." },
+            { tag: "02 / COLUMNA Y ESPALDA", title: "Hernia de Disco, Ciática y Lumbalgia Crónica", desc: "Bloqueos radiculares guiados y tratamientos conservadores para eliminar el dolor sin cirugía mayor." },
+            { tag: "03 / HOMBRO Y MANGUITO", title: "Manguito Rotador y Tendinitis de Hombro", desc: "Infiltraciones ecoguiadas y fisioterapia avanzada para recuperar el rango articular completo." },
+            { tag: "04 / MEDICINA REGENERATIVA", title: "Plasma Rico en Plaquetas (PRP) & Ácido Hialurónico", desc: "Terapias biológicas para frenar la artrosis, regenerar cartílago y aliviar el dolor articular crónico." },
+            { tag: "05 / LESIONES DEPORTIVAS", title: "Esguinces, Desgarros Musculares y Tendinopatías", desc: "Diagnóstico ecográfico en consultorio y protocolos de retorno deportivo acelerado y seguro." },
+            { tag: "06 / CIRUGÍA ARTROSCÓPICA", title: "Cirugía Ortopédica Ambulatoria de Alta Precisión", desc: "Técnicas modernas con pequeñas incisiones, menor dolor postoperatorio y rápida reinserción laboral." }
+          ],
+          metodoTitulo: "03 / NUESTRO CIRCUITO DE RECUPERACIÓN",
+          metodoH2: "Desde el diagnóstico por imágenes hasta tu rehabilitación completa.",
+          paso1T: "Evaluación clínica y de imágenes",
+          paso1P: "Revisamos tus radiografías o resonancias y evaluamos la movilidad de la zona afectada.",
+          paso3T: "Tratamiento Específico y Personalizado",
+          paso3P: "Definimos la terapia más efectiva (rehabilitación, infiltración guiada o intervención) según tu estilo de vida.",
+          autoridadH2: "Traumatología moderna orientada a la función y calidad de vida.",
+          autoridadP1: "creemos en agotar siempre las alternativas terapéuticas no quirúrgicas antes de indicar una cirugía. Tu recuperación es nuestra meta.",
+          autoridadRol: "Médico Traumatólogo & Ortopedista",
+          autoridadBadge: "TRAUMATOLOGÍA & DEPORTE",
+          stats: [ { v: "+16", l: "Años Especializados" }, { v: "+4.200", l: "Pacientes Sin Dolor" }, { v: "PRP", l: "Terapias Biológicas Avanzadas" }, { v: "100%", l: "Seguimiento Personalizado" } ],
+          cierreTag: "07 / ALIVIÁ TU DOLOR",
+          cierreH2: "No te acostumbres a vivir con molestias articulares.",
+          cierreP: "Escribinos ahora por WhatsApp para agendar tu consulta traumatológica presencial.",
+          ctaBtn: "Consultar con Traumatólogo",
+          wspMsg: "Hola Dr., quisiera solicitar un turno para una consulta por dolor/lesión traumatológica."
+        },
+
+        saludmental: {
+          tipo: "medico",
+          badge: "PSICOLOGÍA Y SALUD MENTAL",
+          subbadge: "ESPACIO CONFIDENCIAL",
+          h1: "Un espacio para sanar y reencontrarte.<br/><span class='text-neutral-300'>Terapia psicológica presencial y online con enfoque actual.</span>",
+          heroP: "Tratamiento de ansiedad, ataques de pánico, estrés, duelos y depresión. Terapia Cognitivo Conductual y psicoanálisis con profesionales matriculados.",
+          ticker: "Absoluta confidencialidad · Sesiones online a todo el país y presenciales",
+          sec02Tag: "02 / MOTIVOS DE CONSULTA",
+          sec02H2: "¿Qué situación estás atravesando hoy?",
+          cards: [
+            { tag: "01 / ANSIEDAD Y ESTRÉS", title: "Crisis de Ansiedad y Ataques de Pánico", desc: "Herramientas clínicas concretas para gestionar la rumiación mental, la angustia y los síntomas físicos." },
+            { tag: "02 / ESTADO DE ÁNIMO", title: "Depresión, Desmotivación y Tristeza Profunda", desc: "Acompañamiento profesional para recuperar el sentido vital, la energía cotidiana y el bienestar personal." },
+            { tag: "03 / TERAPIA DE PAREJA", title: "Conflictos Vinculares y Comunicación Afectiva", desc: "Mediación terapéutica para destrabar patrones tóxicos, crisis de confianza o coordinar separaciones sanas." },
+            { tag: "04 / AUTOESTIMA Y LÍMITES", title: "Inseguridad, Dependencia Emocional y Autoexigencia", desc: "Trabajamos el autoconcepto, la asertividad y la capacidad de poner límites saludables en tus relaciones." },
+            { tag: "05 / DUELOS Y CAMBIOS", title: "Elaboración de Pérdidas, Separaciones y Mudanzas", desc: "Espacio de contención para transitar momentos de transición vital dolorosos con fortaleza psicológica." },
+            { tag: "06 / TERAPIA ONLINE", title: "Sesiones Virtuales Seguras desde tu Casa", desc: "Misma efectividad clínica por videollamada cifrada, adaptada a tus horarios y ritmo cotidiano." }
+          ],
+          metodoTitulo: "03 / CÓMO COMENZAMOS",
+          metodoH2: "Dar el primer paso hacia tu bienestar emocional es seguro y cuidado.",
+          paso1T: "Primer contacto confidencial por WhatsApp",
+          paso1P: "Nos contás brevemente qué te sucede y coordinamos la primera entrevista de admisión.",
+          paso3T: "Frecuencia y Objetivos Claros",
+          paso3P: "Pautamos un plan de trabajo terapéutico respetando tus tiempos y necesidades individuales.",
+          autoridadH2: "Profesionales de la salud mental comprometidos con tu bienestar integral.",
+          autoridadP1: "sabemos lo difícil que puede ser pedir ayuda. Brindamos un espacio libre de juicios donde podés expresarte con total seguridad y reserva.",
+          autoridadRol: "Lic. en Psicología · Matrícula Profesional",
+          autoridadBadge: "SALUD MENTAL & PSICOLOGÍA",
+          stats: [ { v: "+12", l: "Años en Clínica Psicológica" }, { v: "+1.800", l: "Procesos Terapéuticos" }, { v: "100%", l: "Secreto Profesional Estricto" }, { v: "Online", l: "Atención a Todo el País" } ],
+          cierreTag: "07 / EMPEZÁ HOY",
+          cierreH2: "Tu salud mental merece la misma prioridad que tu salud física.",
+          cierreP: "Escribinos con total reserva por WhatsApp para agendar tu primera sesión.",
+          ctaBtn: "Coordinar Primera Sesión",
+          wspMsg: "Hola Lic., quisiera consultar por disponibilidad para iniciar terapia psicológica."
         }
       };
 
-      // 2. Leer parámetros de la URL
+      // 2. LEER PARÁMETROS DE LA URL
       const params = new URLSearchParams(window.location.search);
-      const paramEstudio = params.get('estudio') || params.get('nombre');
+      const paramEstudio = params.get('estudio') || params.get('nombre') || params.get('clinica') || params.get('doctor');
       const paramNicho = (params.get('nicho') || 'laboral').toLowerCase();
       const paramWsp = params.get('wsp') || params.get('telefono') || '5491100000000';
-      const paramZona = params.get('zona') || params.get('ciudad') || 'CABA y Todo el País';
-      const paramTitular = params.get('titular') || params.get('abogado');
+      const paramZona = params.get('zona') || params.get('ciudad') || 'CABA y Alrededores';
+      const paramTitular = params.get('titular') || params.get('abogado') || params.get('medico') || params.get('doctor');
 
       const nichoData = NICHOS[paramNicho] || NICHOS.laboral;
-      const nombreFinal = paramEstudio || "elyte®";
-      const titularFinal = paramTitular || ("Equipo de " + nombreFinal);
+      const nombreFinal = paramEstudio || (nichoData.tipo === 'medico' ? 'Centro Médico Especializado' : 'elyte®');
+      const titularFinal = paramTitular || (nichoData.tipo === 'medico' ? 'Equipo Médico Especialista' : ('Equipo de ' + nombreFinal));
 
-      // 3. Aplicar textos de Marca y Abogado
-      document.title = `${nombreFinal} — Servicios Jurídicos Especializados`;
+      // 3. TÍTULO Y MARCA EN NAVEGADOR
+      document.title = `${nombreFinal} — ${nichoData.badge}`;
 
       // Brand text en Navbar y Footer
       document.querySelectorAll('.brand-name-target').forEach(el => {
@@ -904,6 +1090,12 @@
         el.textContent = nombreFinal;
       });
 
+      // Botón CTA Navbar texto
+      const navBtnText = document.querySelector('.navbar-btn-text');
+      if (navBtnText && nichoData.ctaBtn) {
+        navBtnText.textContent = nichoData.ctaBtn;
+      }
+
       // WhatsApp links dinámicos
       const cleanWsp = paramWsp.replace(/[^0-9]/g, '');
       const wspUrl = `https://wa.me/${cleanWsp}?text=${encodeURIComponent(nichoData.wspMsg)}`;
@@ -911,7 +1103,7 @@
         a.href = wspUrl;
       });
 
-      // 4. Inyectar datos según el Nicho
+      // 4. HERO SECTION
       const elBadge = document.querySelector('.nicho-badge-target');
       if (elBadge) elBadge.textContent = nichoData.badge;
 
@@ -927,6 +1119,28 @@
       const elTicker = document.querySelector('.nicho-ticker-target');
       if (elTicker) elTicker.textContent = nichoData.ticker;
 
+      // 5. SECCIÓN 02: TÍTULO Y 6 TARJETAS
+      const sec02Tag = document.querySelector('.sec02-tag-target');
+      if (sec02Tag && nichoData.sec02Tag) sec02Tag.textContent = nichoData.sec02Tag;
+
+      const sec02H2 = document.querySelector('.sec02-h2-target');
+      if (sec02H2 && nichoData.sec02H2) sec02H2.textContent = nichoData.sec02H2;
+
+      if (nichoData.cards && nichoData.cards.length === 6) {
+        const cardsDoms = document.querySelectorAll('.service-card');
+        cardsDoms.forEach((cardEl, idx) => {
+          const cardData = nichoData.cards[idx];
+          if (!cardData) return;
+          const tagEl = cardEl.querySelector('.text-xs.font-mono.text-white\/70');
+          if (tagEl) tagEl.textContent = cardData.tag;
+          const titleEl = cardEl.querySelector('h3');
+          if (titleEl) titleEl.textContent = cardData.title;
+          const pEl = cardEl.querySelector('p');
+          if (pEl) pEl.textContent = cardData.desc;
+        });
+      }
+
+      // 6. SECCIÓN 03: MÉTODO / PROTOCOLO
       const elMetodoH2 = document.querySelector('.nicho-metodoh2-target');
       if (elMetodoH2) elMetodoH2.textContent = nichoData.metodoH2;
 
@@ -936,6 +1150,7 @@
       const elPaso3P = document.querySelector('.nicho-paso3p-target');
       if (elPaso3P) elPaso3P.textContent = nichoData.paso3P;
 
+      // 7. SECCIÓN 04: AUTORIDAD
       const elAutH2 = document.querySelector('.nicho-auth2-target');
       if (elAutH2) elAutH2.textContent = nichoData.autoridadH2;
 
@@ -951,7 +1166,27 @@
       const elAutBadge = document.querySelector('.nicho-autbadge-target');
       if (elAutBadge) elAutBadge.textContent = `${nichoData.autoridadBadge} · ${nombreFinal.toUpperCase()}`;
 
-      // Floating demo bar for you to test easily
+      // 8. SECCIÓN 05: ESTADÍSTICAS DINÁMICAS
+      if (nichoData.stats && nichoData.stats.length === 4) {
+        for (let s = 1; s <= 4; s++) {
+          const valEl = document.querySelector(`.stat${s}-val`);
+          const lblEl = document.querySelector(`.stat${s}-lbl`);
+          if (valEl) valEl.textContent = nichoData.stats[s-1].v;
+          if (lblEl) lblEl.textContent = nichoData.stats[s-1].l;
+        }
+      }
+
+      // 9. SECCIÓN 07: CIERRE Y LLAMADO A LA ACCIÓN
+      const elCierreTag = document.querySelector('.cierre-tag-target');
+      if (elCierreTag && nichoData.cierreTag) elCierreTag.textContent = nichoData.cierreTag;
+
+      const elCierreH2 = document.querySelector('.cierre-h2-target');
+      if (elCierreH2 && nichoData.cierreH2) elCierreH2.textContent = nichoData.cierreH2;
+
+      const elCierreP = document.querySelector('.cierre-p-target');
+      if (elCierreP && nichoData.cierreP) elCierreP.textContent = nichoData.cierreP;
+
+      // Top Demo Notification Bar
       const bar = document.getElementById('demo-test-bar');
       if (bar && params.toString()) {
         bar.style.display = 'flex';
